@@ -11,9 +11,9 @@ public class DialogContent extends ParentPage{
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
-    @FindBy(css = "[placeholder='Username']")
+    @FindBy(css = "[formcontrolname='username']")
     public WebElement loginUsername;
-    @FindBy(css = "[placeholder='Password']")
+    @FindBy(css = "[formcontrolname='password']")
     public WebElement loginPassword;
     @FindBy(xpath = "//span[@class='mdc-button__label']")
     public WebElement loginButton;
