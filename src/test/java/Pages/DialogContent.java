@@ -115,6 +115,30 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//td[contains(., 'Balance')]")
     public WebElement balanceCell;
 
+    @FindBy(css = "[icon='messages']")
+    public WebElement chatsIcon;
+
+    @FindBy(xpath = "(//span[@class='mdc-list-item__content']//span)[2]")
+    public WebElement StudentChats;
+
+    @FindBy(css = "[icon='users']")
+    public WebElement discussUsers;
+
+    @FindBy(xpath = "//*[text()='Mark Zuckerberg']")
+    public WebElement contacts;
+
+    @FindBy(xpath = "(//*[@icon='paperclip'])[2]")
+    public WebElement attachButton;
+
+    @FindBy(css = "[formcontrolname='commentText']")
+    public WebElement discussTextField;
+
+    @FindBy(css = "[icon='paper-plane']")
+    public WebElement discussSendButton;
+
+    @FindBy(xpath = "((//div[@style='flex-direction: column; box-sizing: border-box; display: flex;'])[41]/following::div)[2]")
+    public  WebElement discussDate;
+
 
 
 
