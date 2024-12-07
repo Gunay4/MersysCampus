@@ -67,7 +67,53 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//span[text()='Show by Chart'])[1]")
     public WebElement showbyChart;
 
+    @FindBy(xpath= "//button[@aria-haspopup='menu' and contains(@class, 'mat-mdc-button-wrapper')]")
+    public WebElement hamburgerMenuButton;
 
+    @FindBy(xpath = "//span[text()='Finance']")
+    public WebElement financeButton;
+
+    @FindBy(xpath = "//button[.//span[text()='My Finance']]")
+    public WebElement myFinanceButton;
+
+    @FindBy(css = "span[style*='font-size: 16px']")
+    public WebElement studentsFeesText;
+
+    @FindBy(xpath = "//tr[contains(@class, 'mat-mdc-row')][1]")
+    public WebElement studentRow;
+
+    @FindBy(xpath = "//*[@id='mat-radio-3-input']")
+    public WebElement stripeCircle;
+
+    @FindBy(xpath = "(//span[@class='mdc-tab__content'])[2]")
+    public WebElement feeBalanceDetail;
+
+    @FindBy(xpath = "//ms-currency-field[@formcontrolname='customAmountField']//input[@id='ms-currency-field-0']")
+    public WebElement amountField;
+
+    @FindBy(xpath = "//button[.//span[text()='Pay']]")
+    public WebElement payButton;
+
+    @FindBy(xpath = "//*[@id='Field-numberInput']")
+    public WebElement numberInputField;
+
+    @FindBy(xpath = "//*[@id='Field-expiryInput']")
+    public WebElement expiryInputField;
+
+    @FindBy(xpath = "//*[@id='Field-cvcInput']")
+    public WebElement cvcInputField;
+
+    @FindBy(xpath = "//*[@id='Field-countryInput']")
+    public WebElement countryInputField;
+
+    @FindBy(css = "[value='STRIPE']")
+    public WebElement stripe;
+
+    @FindBy(xpath = "//div[contains(text(), 'Payment successful')]")
+    public WebElement paymentSuccessMessage;
+
+    @FindBy(xpath = "//td[contains(., 'Balance')]")
+    public WebElement balanceCell;
 
 
 
@@ -80,9 +126,26 @@ public class DialogContent extends ParentPage{
             case "loginButton":return this.loginButton;
             case "loginInvMsg":return this.loginInvMsg;
             case "loginWelcome":return this.loginWelcome;
-
+            case "hamburgerMenuButton":return this.hamburgerMenuButton;
+            case "financeButton":return this.financeButton;
+            case "myFinanceButton":return this.myFinanceButton;
+            case "studentsFeesText":return this.studentsFeesText;
+            case "studentRow":return this.studentRow;
+            case "stripeCircle":return this.stripeCircle;
+            case "feeBalanceDetail":return this.feeBalanceDetail;
+            case "amountField":return this.amountField;
+            case "payButton":return this.payButton;
+            case "numberInputField":return this.numberInputField;
+            case "expiryInputField":return this.expiryInputField;
+            case "cvcInputField":return this.cvcInputField;
+            case "countryInputField":return this.countryInputField;
+            case "stripe":return this.stripe;
+            case "balanceCell":return this.balanceCell;
+            case "paymentSuccessMessage":return this.paymentSuccessMessage;
 
         }
         return null;
     }
+
+
 }
