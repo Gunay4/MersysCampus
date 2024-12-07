@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataTable {
@@ -54,7 +55,8 @@ public class DataTable {
         for (int i = 0; i < listSelections.size(); i++) {
             WebElement ddMenu = dc.getWebElement(listSelections.get(i).get(0));
             dc.mySelectByIndex(ddMenu, Integer.parseInt(listSelections.get(i).get(1)));
+
         }
     }
-
 }
+
