@@ -14,7 +14,7 @@ import java.util.List;
 
 public class US_20_Assignments {
 
-    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
     DialogContent dc = new DialogContent();
     JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
     int rndNumber;
