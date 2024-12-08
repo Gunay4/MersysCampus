@@ -129,9 +129,6 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[text()='Mark Zuckerberg']")
     public WebElement contacts;
 
-    @FindBy(xpath = "(//*[@icon='paperclip'])[2]")
-    public WebElement attachButton;
-
     @FindBy(css = "[formcontrolname='commentText']")
     public WebElement discussTextField;
 
@@ -168,7 +165,39 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "[class='ng-fa-icon ng-star-inserted']> svg[data-icon='star']")
     public List<WebElement> starIconMarked;
 
+    @FindBy(css = "[class='tox-edit-area__iframe']")
+    public WebElement notePad;
 
+    @FindBy(xpath = "(//button[@class='tox-mbtn tox-mbtn--select'])[4]")
+    public WebElement insertBtn;
+
+    @FindBy(xpath = "//div[text()='Table']")
+    public WebElement table;
+
+    @FindBy(css = "[data-mce-name='Save']")
+    public WebElement tableSave;
+
+    @FindBy(css = "[icon='paperclip']")
+    public WebElement attachButton;
+
+    @FindBy(xpath = "//*[text()='From Local']")
+    public WebElement fromLocal;
+
+    @FindBy(xpath = "//*[text()='Save as Draft']")
+    public WebElement saveAsDraft;
+
+    @FindBy(css ="[class='mat-accordion']")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "//*[text()='Submit']")
+    public WebElement submitBtn;
+
+    @FindBy(css = "[class='mdc-button mdc-button--outlined mat-mdc-outlined-button mat-accent mat-mdc-button-base'] > :nth-child(2)")
+    public WebElement yesBtn;
+
+
+    @FindBy(xpath = "//*[text()='Successfully submitted to review']")
+    public WebElement successSendMessagge;
 
 
     public WebElement getWebElement(String strElementName){
