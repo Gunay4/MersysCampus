@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 
 public class DialogContent extends ParentPage{
     public DialogContent() {
@@ -138,6 +140,30 @@ public class DialogContent extends ParentPage{
 
     @FindBy(xpath = "((//div[@style='flex-direction: column; box-sizing: border-box; display: flex;'])[41]/following::div)[2]")
     public  WebElement discussDate;
+
+    @FindBy(xpath = "(//*[text()='11A- Biology '])[1]")
+    public WebElement biologyLocator;
+
+    @FindBy(css="[icon='info']>button")
+    public List<WebElement> infoIcon;
+
+    @FindBy(css = "[class='mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base']")
+    public WebElement backButton;
+
+    @FindBy(css="[icon='file-import']>button")
+    public List<WebElement> fileImportIcon;
+
+    @FindBy(css = "[aria-label='Close dialog']")
+    public WebElement closeWindowBtn;
+
+    @FindBy(css="[icon='star']>button")
+    public List<WebElement> starIcon;
+
+    @FindBy(css="[class='assignment ng-star-inserted']>div")
+    public  List<WebElement> rndmIconPlace;
+
+    @FindBy(css = "[data-prefix='fas']")
+    public List<WebElement> starIconMarked;
 
 
 
