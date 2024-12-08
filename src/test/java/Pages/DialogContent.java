@@ -117,7 +117,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//td[contains(., 'Balance')]")
     public WebElement balanceCell;
 
-    @FindBy(css = "[icon='messages']")
+    @FindBy(xpath = "(//*[@icon='comments-alt']/button)[1]")
     public WebElement chatsIcon;
 
     @FindBy(xpath = "(//span[@class='mdc-list-item__content']//span)[2]")
@@ -141,28 +141,31 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "((//div[@style='flex-direction: column; box-sizing: border-box; display: flex;'])[41]/following::div)[2]")
     public  WebElement discussDate;
 
-    @FindBy(xpath = "(//*[text()='11A- Biology '])[1]")
-    public WebElement biologyLocator;
+   /* @FindBy(xpath = "(//*[text()='11A- Biology '])[1]")
+    public WebElement biologyLocator;*/
+
+    @FindBy(xpath= "//strong[text()=' Overdue ']/following-sibling::span")
+    public WebElement Verifynumber;
 
     @FindBy(css="[icon='info']>button")
     public List<WebElement> infoIcon;
 
-    @FindBy(css = "[class='mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base']")
+    @FindBy(xpath = "(//span[@class='mat-focus-indicator'])[16]")
     public WebElement backButton;
 
-    @FindBy(css="[icon='file-import']>button")
+    @FindBy(css="[icon='file-import']> button")
     public List<WebElement> fileImportIcon;
 
     @FindBy(css = "[aria-label='Close dialog']")
     public WebElement closeWindowBtn;
 
-    @FindBy(css="[icon='star']>button")
+    @FindBy(css="[icon='star']> button")
     public List<WebElement> starIcon;
 
     @FindBy(css="[class='assignment ng-star-inserted']>div")
     public  List<WebElement> rndmIconPlace;
 
-    @FindBy(css = "[data-prefix='fas']")
+    @FindBy(css = "[class='ng-fa-icon ng-star-inserted']> svg[data-icon='star']")
     public List<WebElement> starIconMarked;
 
 

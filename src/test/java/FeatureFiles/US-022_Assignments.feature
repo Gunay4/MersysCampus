@@ -1,4 +1,4 @@
-Feature: Fonksiyon
+Feature: Assignments Functionality
 
   Background:
     Given Navigate to website
@@ -9,6 +9,6 @@ Feature: Fonksiyon
       | loginButton |
     Then User should login successfully
 
-  Scenario: Assignment
+  Scenario: Select Assignment filter
     Given Navigate to the assignment select filter and search
     And from the drop-down sort menu select and verify show by course, type, date and chart
