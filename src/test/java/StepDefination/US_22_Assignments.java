@@ -14,7 +14,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class US_22_Assignments {
-    LeftNav ln = new LeftNav();
+
     DialogContent dc = new DialogContent();
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(8));
     JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
@@ -61,7 +61,7 @@ public class US_22_Assignments {
         dc.showbyType.click();
         wait.until(ExpectedConditions.visibilityOf(dc.showbyDate));
         js.executeScript("arguments[0].click();", dc.showbyDate);
-        wait.until(ExpectedConditions.visibilityOf(dc.date));
+      //  wait.until(ExpectedConditions.visibilityOf(dc.date));
 
         dc.showbyDate.click();
         wait.until(ExpectedConditions.visibilityOf(dc.showbyChart));
