@@ -195,9 +195,16 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "[class='mdc-button mdc-button--outlined mat-mdc-outlined-button mat-accent mat-mdc-button-base'] > :nth-child(2)")
     public WebElement yesBtn;
 
-
     @FindBy(xpath = "//*[text()='Successfully submitted to review']")
     public WebElement successSendMessagge;
+
+    @FindBy(xpath = "(//div[@class='ng-star-inserted']//img)[1]")
+    public WebElement homeMLogo;
+
+    @FindBy(xpath = "//img[@alt='TechnoStudy']")
+    public WebElement homeTSLogo;
+
+
 
 
     public WebElement getWebElement(String strElementName){
@@ -224,6 +231,7 @@ public class DialogContent extends ParentPage{
             case "stripe":return this.stripe;
             case "balanceCell":return this.balanceCell;
             case "paymentSuccessMessage":return this.paymentSuccessMessage;
+            case "homeMLogo":return this.homeMLogo;
 
         }
         return null;
