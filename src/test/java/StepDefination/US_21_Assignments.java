@@ -2,7 +2,6 @@ package StepDefination;
 
 import Pages.DialogContent;
 import Utilities.GWD;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,14 +12,14 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
-import java.util.List;
 
 public class US_21_Assignments {
 
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
-    Actions action=new Actions(GWD.getDriver());
+    Actions actions =new Actions(GWD.getDriver());
     DialogContent dc = new DialogContent();
     Robot robot;
+
 
     {
         try {
@@ -40,12 +39,10 @@ public class US_21_Assignments {
         wait.until(ExpectedConditions.elementToBeClickable(dc.fileImportIcon.get(3)));
         dc.fileImportIcon.get(3).click();
         wait.until(ExpectedConditions.visibilityOf(dc.notePad));
-        action.moveToElement(dc.notePad).click().build().perform();
-        action.sendKeys("Example text sent").build().perform();
-//
-//        String textToCopy = "Bu bir test metnidir.";
-//        StringSelection stringSelection = new StringSelection(textToCopy);
-//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+        actions.moveToElement(dc.notePad).click().build().perform();
+        actions.sendKeys("Example text sent").build().perform();
+
+
         //Copy
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_A);
@@ -69,14 +66,11 @@ public class US_21_Assignments {
         robot.keyRelease(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_CONTROL);
 
-        dc.insertBtn.click();
-        dc.table.click();
-        dc.tableSave.click();
 
         dc.attachButton.click();
         dc.fromLocal.click();
         Thread.sleep(2000);
-        StringSelection folderWay = new StringSelection("C:\\Users\\deniz\\Desktop\\test\\test.txt");
+        StringSelection folderWay = new StringSelection("C:\\Users\\GÜNAY\\Documents\\@Test.txt");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(folderWay, null);
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_V);
@@ -90,28 +84,25 @@ public class US_21_Assignments {
         }
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(2000);
 
+        actions.moveToLocation(750,420).click().build().perform();
         wait.until(ExpectedConditions.elementToBeClickable(dc.saveAsDraft));
         dc.saveAsDraft.click();
-        Assert.assertTrue(dc.successMessage.getText().toLowerCase().contains("successfully"));
 
-        Assert.assertFalse(dc.submitBtn.isDisplayed(),"Buton hala aktif");
+        wait.until(ExpectedConditions.visibilityOf(dc.successMessage));
+        Assert.assertTrue(dc.successMessage.getText().toLowerCase().contains("successfully".toLowerCase()));
+
 
         dc.submitBtn.click();
         dc.yesBtn.click();
+        wait.until(ExpectedConditions.visibilityOf(dc.successSendMessagge));
         Assert.assertTrue(dc.successSendMessagge.getText().toLowerCase().contains("successfully submitted"));
 
-        dc.rndmIconPlace.get((int) Math.random()*dc.rndmIconPlace.size()).click();
+        dc.rndmIconPlace.get((int) (Math.random()*dc.rndmIconPlace.size())).click();
+        wait.until(ExpectedConditions.visibilityOf(dc.newSubmission));
         Assert.assertTrue(dc.newSubmission.isDisplayed(),"New Submission butonu görünmüyor");
         dc.newSubmission.click();
+        wait.until(ExpectedConditions.visibilityOf(dc.notePad));
         Assert.assertTrue(dc.notePad.isDisplayed(),"Metin editörü açılmadı");
-
-
-
-
-
-
-
     }
 }
