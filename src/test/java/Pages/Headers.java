@@ -4,9 +4,9 @@ import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class LeftNav extends ParentPage {
+public class Headers extends ParentPage {
 
-    public LeftNav() {
+    public Headers() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
