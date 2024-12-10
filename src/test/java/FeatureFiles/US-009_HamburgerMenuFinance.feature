@@ -10,10 +10,15 @@ Feature: Hamburger Menu / Finance
     Then User should login successfully
 
   Scenario: Fee Balance Detail
-    When User clicks on the "hamburgerMenuButton" from the header
-    And User clicks on the "financeButton" from the drop-down menu
-    And User clicks on the "myFinanceButton" from the sub-menu
+    When Click on the Element in Dialog
+      |hamburgerMenuButton|
+      |financeButton      |
+      |myFinanceButton    |
     Then User should be redirected to the Finance page
-    When User clicks on the "studentRow" in the Finance table
+    When Click on the Element in Dialog
+      |studentRow|
     Then User should be redirected to the Student's Fee page
-    Then User clicks on the "feeBalanceDetail"
+    When Click on the Element in Dialog
+      |feeBalanceDetail|
+    Then Verify that fee balance detail page is visible
+
