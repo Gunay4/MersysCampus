@@ -11,14 +11,14 @@ Feature: Hamburger Menu / Finance
 
   Scenario: Fee Balance Detail
     When Click on the Element in Dialog
-      |hamburgerMenuButton|
-      |financeButton      |
-      |myFinanceButton    |
+      | hamburgerMenuButton |
+      | financeButton       |
+      | myFinanceButton     |
     Then User should be redirected to the Finance page
     When Click on the Element in Dialog
-      |studentRow|
+      | studentRow |
     Then User should be redirected to the Student's Fee page
     When Click on the Element in Dialog
-      |feeBalanceDetail|
+      | feeBalanceDetail |
     Then Verify that fee balance detail page is visible
 
