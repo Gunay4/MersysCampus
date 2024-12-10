@@ -5,6 +5,7 @@ import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -26,7 +27,7 @@ public class US_23_Calendar {
     }
 
 
-    @And("The student must be able to see and click on the weekly lesson plan link and the link to access the calendar pages.")
+    @Then("The student must be able to see and click on the weekly lesson plan link and the link to access the calendar pages.")
     public void theStudentMustBeAbleToSeeAndClickOnTheWeeklyLessonPlanLinkAndTheLinkToAccessTheCalendarPages() {
 
         wait.until(ExpectedConditions.visibilityOf(dc.calenderMenu));
@@ -36,7 +37,7 @@ public class US_23_Calendar {
         dc.weeklyCoursePlan.click();
     }
 
-    @And("The student should be able to see what the symbols P, S, E, C mean on the page.")
+    @Then("The student should be able to see what the symbols P, S, E, C mean on the page.")
     public void theStudentShouldBeAbleToSeeWhatTheSymbolsPSECMeanOnThePage() {
         wait.until(ExpectedConditions.visibilityOf(dc.published));
 
@@ -51,7 +52,7 @@ public class US_23_Calendar {
         Assert.assertEquals(dc.cancelled.getText().toLowerCase(),"cancelled");
     }
 
-    @And("On the weekly course plan page, the student should be able to click on the icons to go back and forth in the calendar and directly to today.")
+    @Then("On the weekly course plan page, the student should be able to click on the icons to go back and forth in the calendar and directly to today.")
     public void onTheWeeklyCoursePlanPageTheStudentShouldBeAbleToClickOnTheIconsToGoBackAndForthInTheCalendarAndDirectlyToToday() {
 
         dc.myClick(dc.rightArrowIcon);

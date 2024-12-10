@@ -176,7 +176,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[text()='From Local']")
     public WebElement fromLocal;
 
-    @FindBy(css = "[data-icon='floppy-disk']")
+    @FindBy(css = "[icon='save']")
     public WebElement saveAsDraft;
 
     @FindBy(css ="[class='mat-accordion']")
