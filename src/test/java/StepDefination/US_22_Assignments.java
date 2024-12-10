@@ -1,7 +1,6 @@
 package StepDefination;
 
 import Pages.DialogContent;
-import Pages.LeftNav;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -61,7 +60,6 @@ public class US_22_Assignments {
         dc.showbyType.click();
         wait.until(ExpectedConditions.visibilityOf(dc.showbyDate));
         js.executeScript("arguments[0].click();", dc.showbyDate);
-      //  wait.until(ExpectedConditions.visibilityOf(dc.date));
 
         dc.showbyDate.click();
         wait.until(ExpectedConditions.visibilityOf(dc.showbyChart));

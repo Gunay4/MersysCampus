@@ -71,6 +71,7 @@ public class US_21_Assignments {
 
         dc.insertBtn.click();
         dc.table.click();
+        wait.until(ExpectedConditions.elementToBeClickable(dc.tableSave));
         dc.tableSave.click();
 
         dc.attachButton.click();
