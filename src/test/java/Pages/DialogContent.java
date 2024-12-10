@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
-import java.util.logging.XMLFormatter;
+
 
 
 public class DialogContent extends ParentPage{
@@ -254,11 +254,18 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "[class='mat-badge mdc-button mat-mdc-button mat-badge-accent mat-mdc-button-base mat-mdc-raised-button mdc-button--raised mat-basic mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden ng-star-inserted']")
     public WebElement newSubmission;
 
+    //US_16_ Locaterlar
+    @FindBy(xpath = "//ms-layout-menu-button[@caption='NAV.GRADING.TITLE']//button")
+    public WebElement gradingMenu;
 
+    @FindBy(xpath = "//div[@role='tab' and contains(., 'Student Transcript')]")
+    public WebElement studentTranscript;
 
+    @FindBy(xpath = "//div[@role='tab' and contains(., 'Transcript By Subject')]")
+    public WebElement transcriptBySubject;
 
-
-
+    @FindBy(xpath = "//div[@role='tab' and contains(., 'Course Grade')]")
+    public WebElement courseGrade;
 
 
 
@@ -288,6 +295,11 @@ public class DialogContent extends ParentPage{
             case "paymentSuccessMessage":return this.paymentSuccessMessage;
             case "homeMLogo":return this.homeMLogo;
             case "calendarHeader":return this.calendarHeader;
+            //US_16_Case'ler
+            case "gradingMenu":return this.gradingMenu;
+            case "studentTranscript":return this.studentTranscript;
+            case "transcriptBySubject":return this.transcriptBySubject;
+            case "courseGrade":return this.courseGrade;
 
         }
         return null;

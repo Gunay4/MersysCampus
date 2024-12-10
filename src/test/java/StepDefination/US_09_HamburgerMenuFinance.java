@@ -20,21 +20,21 @@ import java.time.Duration;
 public class US_09_HamburgerMenuFinance {
     DialogContent dc = new DialogContent();
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+
     @Then("User should be redirected to the Finance page")
     public void userShouldBeRedirectedToTheFinancePage() {
-        wait.until(ExpectedConditions.visibilityOf(dc.getWebElement("studentsFeesText")));
+        wait.until(ExpectedConditions.visibilityOf(dc.studentsFeesText));
         String currentUrl = GWD.getDriver().getCurrentUrl();
         Assert.assertTrue(currentUrl.contains("student-finance/active"), "User is not redirected to the Finance page.");
     }
     @Then("User should be redirected to the Student's Fee page")
     public void userShouldBeRedirectedToTheStudentFeePage() {
-        WebElement studentsFeesText = dc.getWebElement("studentsFeesText");
-        wait.until(ExpectedConditions.visibilityOf(studentsFeesText));
-        Assert.assertTrue(studentsFeesText.isDisplayed(), "User is not redirected to the Student's Fee page.");
+        wait.until(ExpectedConditions.visibilityOf(dc.studentsFeesText));
+        Assert.assertTrue(dc.studentsFeesText.isDisplayed(), "User is not redirected to the Student's Fee page.");
     }
     @Then("Verify that fee balance detail page is visible")
     public void verifyThatFeeBalanceDetailPageIsVisible() {
-        WebElement feeBalanceDetail = dc.getWebElement("feeBalanceDetail");
-        Assert.assertTrue(feeBalanceDetail.isDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(dc.feeBalanceDetail));
+        Assert.assertTrue(dc.feeBalanceDetail.isDisplayed(), "User is not redirected to the Fee Balance Detail page.");
     }
 }
