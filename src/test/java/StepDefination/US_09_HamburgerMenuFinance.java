@@ -1,7 +1,7 @@
 package StepDefination;
 
 import Pages.DialogContent;
-import Pages.LeftNav;
+import Pages.Headers;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -10,7 +10,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -18,7 +17,7 @@ import java.time.Duration;
 
 
 public class US_09_HamburgerMenuFinance {
-    LeftNav ln = new LeftNav();
+    Headers ln = new Headers();
     DialogContent dc = new DialogContent();
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));  // Bekleme süresi artırıldı
     JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();

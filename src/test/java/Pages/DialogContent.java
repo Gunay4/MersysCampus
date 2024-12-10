@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+import java.util.logging.XMLFormatter;
 
 
 public class DialogContent extends ParentPage{
@@ -63,8 +64,6 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//span[text()='Show by Date'])[1]")
     public WebElement showbyDate;
 
-    @FindBy(xpath = "(//div[@class='mat-badge dueDate mat-badge-accent mat-badge-overlap mat-badge-above mat-badge-after mat-badge-small'])[1]")
-    public WebElement date;
 
     @FindBy(xpath = "(//span[text()='Show by Chart'])[1]")
     public WebElement showbyChart;
@@ -120,9 +119,6 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//*[@icon='comments-alt']/button)[1]")
     public WebElement chatsIcon;
 
-    @FindBy(xpath = "(//span[@class='mdc-list-item__content']//span)[2]")
-    public WebElement StudentChats;
-
     @FindBy(css = "[icon='users']")
     public WebElement discussUsers;
 
@@ -137,9 +133,6 @@ public class DialogContent extends ParentPage{
 
     @FindBy(xpath = "((//div[@style='flex-direction: column; box-sizing: border-box; display: flex;'])[41]/following::div)[2]")
     public  WebElement discussDate;
-
-   /* @FindBy(xpath = "(//*[text()='11A- Biology '])[1]")
-    public WebElement biologyLocator;*/
 
     @FindBy(xpath= "//strong[text()=' Overdue ']/following-sibling::span")
     public WebElement Verifynumber;
@@ -204,6 +197,65 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//img[@alt='TechnoStudy']")
     public WebElement homeTSLogo;
 
+    @FindBy(css = "[page='CALENDAR']")
+    public WebElement calendarHeader;
+
+    @FindBy(css = "[class='mdc-tab mat-mdc-tab mat-focus-indicator ng-star-inserted']")
+    public WebElement calenderMenu;
+
+    @FindBy(css = "[title='Today']")
+    public WebElement todayBtn;
+
+    @FindBy(xpath = "(//div[@role='tablist']//span)[3]")
+    public WebElement weeklyCoursePlan;
+
+    @FindBy(xpath = "//*[text()=' P ']")
+    public WebElement letterP;
+
+    @FindBy(xpath = "//*[text()=' S ']")
+    public WebElement letterS;
+
+    @FindBy(xpath = "//span[text()='E']")
+    public WebElement letterE;
+
+    @FindBy(xpath = "//*[text()=' C ']")
+    public WebElement letterC;
+
+    @FindBy(xpath = "//span[text()=' Published ']")
+    public WebElement published;
+
+    @FindBy(xpath = "//span[text()=' Started ']")
+    public WebElement started;
+
+    @FindBy(xpath = "//span[text()=' Ended ']")
+    public WebElement ended;
+
+    @FindBy(xpath = "//span[text()=' Cancelled ']")
+    public WebElement cancelled;
+
+    @FindBy(xpath = "(//span[@class='mat-focus-indicator'])[17]")
+    public WebElement leftArrowIcon;
+
+    @FindBy(xpath = "(//span[@class='mat-focus-indicator'])[18]")
+    public WebElement todayIcon;
+
+    @FindBy(xpath = "(//span[@class='mat-focus-indicator'])[19]")
+    public WebElement rightArrowIcon;
+
+    @FindBy(xpath = "(//span[text()='E'])[3]")
+    public WebElement iconE;
+
+    @FindBy(xpath = "(//span[text()='11A- GEOMETRY '])[1]")
+    public WebElement geoMetry;
+
+    @FindBy(css = "[placeholder='Name']")
+    public WebElement lessonNames;
+
+
+
+
+
+
 
 
 
@@ -232,6 +284,7 @@ public class DialogContent extends ParentPage{
             case "balanceCell":return this.balanceCell;
             case "paymentSuccessMessage":return this.paymentSuccessMessage;
             case "homeMLogo":return this.homeMLogo;
+            case "calendarHeader":return this.calendarHeader;
 
         }
         return null;

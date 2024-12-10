@@ -1,4 +1,4 @@
-Feature:
+Feature:Calendar Functionality
 
   Background:
     Given Navigate to website
@@ -9,13 +9,12 @@ Feature:
       | loginButton |
     Then User should login successfully
 
-  Scenario: Calendar
+  Scenario: Calendar Features
 
     Given Navigate to Calendar
       | calendarHeader |
+
     And The student must be able to see and click on the weekly lesson plan link and the link to access the calendar pages.
-   #   | calenderMenu     |
-    #  | weeklyCoursePlan |
     And The student should be able to see what the symbols P, S, E, C mean on the page.
     And On the weekly course plan page, the student should be able to click on the icons to go back and forth in the calendar and directly to today.
     And The courses that the student is responsible for should be visible and clickable.
