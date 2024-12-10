@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -84,34 +85,31 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//tr[contains(@class, 'mat-mdc-row')][1]")
     public WebElement studentRow;
 
-    @FindBy(xpath = "//*[@id='mat-radio-3-input']")
+    @FindBy(xpath = " //div[@class='mat-ripple mat-radio-ripple mat-focus-indicator'][1]")
     public WebElement stripeCircle;
 
     @FindBy(xpath = "(//span[@class='mdc-tab__content'])[2]")
     public WebElement feeBalanceDetail;
 
-    @FindBy(xpath = "//ms-currency-field[@formcontrolname='customAmountField']//input[@id='ms-currency-field-0']")
-    public WebElement amountField;
+    @FindBy(xpath = "//input[@placeholder='Amount']")
+    public WebElement amountInputField;
 
-    @FindBy(xpath = "//button[.//span[text()='Pay']]")
+    @FindBy(xpath = "//ms-button/button/span[2]/span")
     public WebElement payButton;
 
-    @FindBy(xpath = "//*[@id='Field-numberInput']")
-    public WebElement numberInputField;
+    @FindBy(xpath = "//input[@id='Field-numberInput']")
+    public WebElement cardNumberInput;
 
-    @FindBy(xpath = "//*[@id='Field-expiryInput']")
+    @FindBy(xpath = "//input[@id='Field-expiryInput']")
     public WebElement expiryInputField;
 
-    @FindBy(xpath = "//*[@id='Field-cvcInput']")
+    @FindBy(xpath = "//input[@id='Field-cvcInput']")
     public WebElement cvcInputField;
-
-    @FindBy(xpath = "//*[@id='Field-countryInput']")
-    public WebElement countryInputField;
 
     @FindBy(css = "[value='STRIPE']")
     public WebElement stripe;
 
-    @FindBy(xpath = "//div[contains(text(), 'Payment successful')]")
+    @FindBy(xpath = "//div[contains(text(), 'Student Payment successfully created')]")
     public WebElement paymentSuccessMessage;
 
     @FindBy(xpath = "//td[contains(., 'Balance')]")
@@ -168,6 +166,27 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "[class='ng-fa-icon ng-star-inserted']> svg[data-icon='star']")
     public List<WebElement> starIconMarked;
 
+    @FindBy(xpath = "//mat-radio-button//label/span[contains(text(),'Pay in full')]")
+    public WebElement payInFullIndicator;
+
+    @FindBy(xpath = "//label[@for='Field-numberInput' and normalize-space(text())='Card number']")
+    public WebElement cardNumberLabel;
+
+    @FindBy(xpath = "//span[@class='w-50-p' and text()='Pay']")
+    public WebElement payIndicator;
+
+    @FindBy(xpath = "//button[contains(@class, 'stripe-pay-button')]")
+    public WebElement stripePaymentsButton;
+
+    @FindBy(xpath = "//*[@id='payment-element']/div/iframe")
+    public WebElement paymentIframe;
+
+    @FindBy(xpath = "//select[@id='Field-countryInput']/option")
+    public List<WebElement> countrySelectOptions;
+
+    @FindBy(xpath = "//select[@id='Field-countryInput']")
+    public WebElement countrySelect;
+
 
 
 
@@ -186,19 +205,33 @@ public class DialogContent extends ParentPage{
             case "studentRow":return this.studentRow;
             case "stripeCircle":return this.stripeCircle;
             case "feeBalanceDetail":return this.feeBalanceDetail;
-            case "amountField":return this.amountField;
+            case "amountInputField":return this.amountInputField;
             case "payButton":return this.payButton;
-            case "numberInputField":return this.numberInputField;
+            case "cardNumberInput":return this.cardNumberInput;
             case "expiryInputField":return this.expiryInputField;
             case "cvcInputField":return this.cvcInputField;
-            case "countryInputField":return this.countryInputField;
+            case "countrySelect":return this.countrySelect;
             case "stripe":return this.stripe;
             case "balanceCell":return this.balanceCell;
             case "paymentSuccessMessage":return this.paymentSuccessMessage;
+            case "payInFullIndicator":return this.payInFullIndicator;
+            case "cardNumberLabel":return cardNumberLabel;
+            case "payIndicator":return payIndicator;
+            case "stripePaymentsButton":return stripePaymentsButton;
+            case "paymentIframe":return paymentIframe;
+
+
+
 
         }
         return null;
     }
 
 
-}
+
+
+    }
+
+
+
+
