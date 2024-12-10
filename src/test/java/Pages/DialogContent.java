@@ -176,7 +176,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[text()='From Local']")
     public WebElement fromLocal;
 
-    @FindBy(xpath = "//*[text()='Save as Draft']")
+    @FindBy(css = "[data-icon='floppy-disk']")
     public WebElement saveAsDraft;
 
     @FindBy(css ="[class='mat-accordion']")
@@ -250,6 +250,9 @@ public class DialogContent extends ParentPage{
 
     @FindBy(css = "[placeholder='Name']")
     public WebElement lessonNames;
+
+    @FindBy(css = "[class='mat-badge mdc-button mat-mdc-button mat-badge-accent mat-mdc-button-base mat-mdc-raised-button mdc-button--raised mat-basic mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden ng-star-inserted']")
+    public WebElement newSubmission;
 
 
 

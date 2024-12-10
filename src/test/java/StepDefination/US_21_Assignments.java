@@ -71,7 +71,6 @@ public class US_21_Assignments {
 
         dc.insertBtn.click();
         dc.table.click();
-        wait.until(ExpectedConditions.elementToBeClickable(dc.tableSave));
         dc.tableSave.click();
 
         dc.attachButton.click();
@@ -91,7 +90,9 @@ public class US_21_Assignments {
         }
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(2000);
 
+        wait.until(ExpectedConditions.elementToBeClickable(dc.saveAsDraft));
         dc.saveAsDraft.click();
         Assert.assertTrue(dc.successMessage.getText().toLowerCase().contains("successfully"));
 
@@ -100,6 +101,13 @@ public class US_21_Assignments {
         dc.submitBtn.click();
         dc.yesBtn.click();
         Assert.assertTrue(dc.successSendMessagge.getText().toLowerCase().contains("successfully submitted"));
+
+        dc.rndmIconPlace.get((int) Math.random()*dc.rndmIconPlace.size()).click();
+        Assert.assertTrue(dc.newSubmission.isDisplayed(),"New Submission butonu görünmüyor");
+        dc.newSubmission.click();
+        Assert.assertTrue(dc.notePad.isDisplayed(),"Metin editörü açılmadı");
+
+
 
 
 
