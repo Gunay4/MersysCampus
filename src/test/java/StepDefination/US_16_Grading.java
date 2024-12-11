@@ -13,31 +13,17 @@ import java.time.Duration;
 
 public class US_16_Grading {
     DialogContent dc = new DialogContent();
-    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(8));
+    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
 
 
-    @Then("User Should Be Redirected To The Grading Page")
-    public void userShouldBeRedirectedToTheGradingPage() {
-        wait.until(ExpectedConditions.visibilityOf(dc.gradingMenu));
-        Assert.assertTrue(dc.gradingMenu.isDisplayed(), "User is not redirected to the Grading Menu page.");
-    }
+    @Then("Verify the button was clicked")
+    public void verifyTheButtonWasClicked(){
 
+        wait.until(ExpectedConditions.attributeToBe(dc.verifyClick, "aria-selected", "true"));
+        String valueSelect = dc.verifyClick.getAttribute("aria-selected");
+        Assert.assertTrue(valueSelect.contains("true"),
+                "Tabindex value is not correct! Current value: " + valueSelect);
 
-    @Then("Verify That The Student Transcript Working Properly")
-    public void verifyThatTheStudentTranscriptWorkingProperly() {
-        wait.until(ExpectedConditions.visibilityOf(dc.studentTranscript));
-        Assert.assertTrue(dc.studentTranscript.isDisplayed(), "User is not redirected to the Student Transcript page.");
-    }
-
-    @Then("Verify That The Transcript By Subject Working Properly")
-    public void verifyThatTheTranscriptBySubjectWorkingProperly() {
-        wait.until(ExpectedConditions.visibilityOf(dc.transcriptBySubject));
-        Assert.assertTrue(dc.transcriptBySubject.isDisplayed(), "User is not redirected to the Transcript By Subject page.");
-    }
-
-    @Then("Verify that The Course Grade Working Properly")
-    public void verifyThatTheCourseGradeWorkingProperly() {
-        wait.until(ExpectedConditions.visibilityOf(dc.courseGrade));
-        Assert.assertTrue(dc.courseGrade.isDisplayed(), "User is not redirected to the Course Grade page.");
+        System.out.println("Clicked on " + dc.verifyClick.getText());
     }
 }
