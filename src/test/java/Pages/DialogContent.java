@@ -301,6 +301,54 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "div[aria-selected='true']")
     public WebElement verifyClick;
 
+    @FindBy(xpath = "//ms-layout-menu-button//span[text()='Attendance']")
+    public WebElement attendanceBtn;
+
+    @FindBy(xpath = "//span[contains(text(),'Present')]")
+    public WebElement attendanceLoad;
+
+    @FindBy(xpath = "//span[text()=' ATTENDANCE EXCUSES ']")
+    public WebElement attendanceExcBtn;
+
+    @FindBy(xpath = "//ms-add-button[@tooltip='ATTENDANCE_EXCUSE.TITLE.ADD']")
+    public WebElement attendanceExcAdd;
+
+    @FindBy(xpath = "//textarea[contains(@id, 'ms-textarea-field')]")
+    public WebElement attendanceExcReason;
+
+    @FindBy(xpath = "//span[text()='Attach Files...']")
+    public WebElement attendanceAttach;
+
+    @FindBy(xpath = "//span[text()='From My Files']")
+    public WebElement attendanceAttachFMF;
+
+    @FindBy(xpath = "(//input[contains(@id,'mat-input')])[2]")
+    public WebElement attendanceFileSearch;
+
+    @FindBy(xpath = "(//span[text()='Search'])[2]")
+    public WebElement attendanceFileSearchSend;
+
+    @FindBy(xpath = "//(//input[@type='checkbox'])[2]")
+    public WebElement attendanceSelectFile;
+
+    @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.SELECT']//button")
+    public WebElement attendanceFileConfirm;
+
+    @FindBy(xpath = "//span[text()='From Local']")
+    public WebElement attendanceAttachFL;
+
+    @FindBy(xpath = "//span[text()='Send']")
+    public WebElement attendanceReasonSend;
+
+    @FindBy(xpath = "//div[text()='Attendance Excuse successfully sent']")
+    public WebElement attendanceExcMsgSent;
+
+    @FindBy(xpath = "//span[text()=' Student_2 11A']")
+    public WebElement attendanceVerifyName;
+
+    @FindBy(xpath = "//span[text()='Sent']")
+    public WebElement attendanceVerifySent;
+
 
 
 
@@ -343,7 +391,21 @@ public class DialogContent extends ParentPage{
             case "courseGradingButton":return this.courseGradingButton;
             case "studentTransButton":return this.studentTransButton;
             case "transBySubjectButton":return this.transBySubjectButton;
-            case "verifyClick":return this.verifyClick;
+            case "attendanceBtn":return this.attendanceBtn;
+            case "attendanceExcBtn":return this.attendanceExcBtn;
+            case "attendanceExcAdd":return this.attendanceExcAdd;
+            case "attendanceExcReason":return this.attendanceExcReason;
+            case "attendanceAttach":return this.attendanceAttach;
+            case "attendanceAttachFMF":return this.attendanceAttachFMF;
+            case "attendanceFileSearch":return this.attendanceFileSearch;
+            case "attendanceFileSearchSend":return this.attendanceFileSearchSend;
+            case "attendanceSelectFile":return this.attendanceSelectFile;
+            case "attendanceFileConfirm":return this.attendanceFileConfirm;
+            case "attendanceAttachFL":return this.attendanceAttachFL;
+            case "attendanceReasonSend":return this.attendanceReasonSend;
+            case "attendanceExcMsgSent":return this.attendanceExcMsgSent;
+            case "attendanceVerifyName":return this.attendanceVerifyName;
+            case "attendanceVerifySent":return this.attendanceVerifySent;
         }
         return null;
     }
