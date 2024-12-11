@@ -406,6 +406,12 @@ public class DialogContent extends ParentPage{
             case "attendanceExcMsgSent":return this.attendanceExcMsgSent;
             case "attendanceVerifyName":return this.attendanceVerifyName;
             case "attendanceVerifySent":return this.attendanceVerifySent;
+            //US_12 case ler
+            case "threeDotButton":return this.threeDotButton;
+            case "excelButton":return this.excelButton;
+            case "pdfButton":return this.pdfButton;
+
+
         }
         return null;
     }
