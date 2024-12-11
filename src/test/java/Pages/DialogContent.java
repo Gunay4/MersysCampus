@@ -204,7 +204,39 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//img[@alt='TechnoStudy']")
     public WebElement homeTSLogo;
 
+    @FindBy(xpath = "//span[text()='Messaging']")
+    public WebElement messagingButton;
 
+    @FindBy(xpath = "//span[text()='Trash']")
+    public WebElement trashButton;
+
+    @FindBy(xpath = "//ms-delete-button")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//button[normalize-space()='Delete']")
+    public WebElement confirmDeleteButton;
+
+    @FindBy(xpath = "//ms-standard-button[@icon='trash-restore']//button")
+    public WebElement restoreButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Students Fees')]")
+    public WebElement financePage;
+
+    @FindBy(xpath = "//span[contains(@class, 'mat-badge') and text()='Grading']")
+    public WebElement gradingButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Course Grade')]")
+    public WebElement courseGradingButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Student Transcript')]")
+    public WebElement studentTransButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Transcript By Subject')]")
+    public WebElement transBySubjectButton;
+
+
+    @FindBy(css = "div[aria-selected='true']")
+    public WebElement verifyClick;
 
 
     public WebElement getWebElement(String strElementName){
@@ -232,6 +264,17 @@ public class DialogContent extends ParentPage{
             case "balanceCell":return this.balanceCell;
             case "paymentSuccessMessage":return this.paymentSuccessMessage;
             case "homeMLogo":return this.homeMLogo;
+            case "messagingButton":return this.messagingButton;
+            case "trashButton":return this.trashButton;
+            case "deleteButton":return this.deleteButton;
+            case "restoreButton":return this.restoreButton;
+            case "confirmDeleteButton":return this.confirmDeleteButton;
+            case "financePage":return this.financePage;
+            case "gradingButton":return this.gradingButton;
+            case "courseGradingButton":return this.courseGradingButton;
+            case "studentTransButton":return this.studentTransButton;
+            case "transBySubjectButton":return this.transBySubjectButton;
+            case "verifyClick":return this.verifyClick;
 
         }
         return null;
