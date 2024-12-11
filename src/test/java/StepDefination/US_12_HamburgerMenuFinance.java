@@ -19,6 +19,7 @@ public class US_12_HamburgerMenuFinance {
     DialogContent dc;
     JavascriptExecutor js;
 
+
     public US_12_HamburgerMenuFinance() {
         this.driver = GWD.getDriver();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));

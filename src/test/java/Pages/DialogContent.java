@@ -313,6 +313,7 @@ public class DialogContent extends ParentPage{
             case "studentTranscript":return this.studentTranscript;
             case "transcriptBySubject":return this.transcriptBySubject;
             case "courseGrade":return this.courseGrade;
+            //US_12 case
             case "threeDotButton":return this.threeDotButton;
             case "excelButton":return this.excelButton;
             case "pdfButton":return this.pdfButton;
