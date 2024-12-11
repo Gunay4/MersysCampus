@@ -267,6 +267,19 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@role='tab' and contains(., 'Course Grade')]")
     public WebElement courseGrade;
 
+    //US_12 locators
+    @FindBy(xpath = "(//button[@aria-haspopup='menu'])[7]")
+    public WebElement threeDotButton;
+
+    @FindBy(xpath = "//button[@mat-menu-item and contains(., 'Excel Export')]")
+    public WebElement excelButton;
+
+    @FindBy(xpath = "//button[.//span[contains(text(), 'Pdf Export')] and contains(@class, 'mat-mdc-menu-item')]")
+    public WebElement pdfButton;
+
+
+
+
 
 
     public WebElement getWebElement(String strElementName){
@@ -300,7 +313,9 @@ public class DialogContent extends ParentPage{
             case "studentTranscript":return this.studentTranscript;
             case "transcriptBySubject":return this.transcriptBySubject;
             case "courseGrade":return this.courseGrade;
-
+            case "threeDotButton":return this.threeDotButton;
+            case "excelButton":return this.excelButton;
+            case "pdfButton":return this.pdfButton;
         }
         return null;
     }
