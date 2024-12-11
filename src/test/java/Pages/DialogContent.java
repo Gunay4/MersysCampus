@@ -254,18 +254,6 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "[class='mat-badge mdc-button mat-mdc-button mat-badge-accent mat-mdc-button-base mat-mdc-raised-button mdc-button--raised mat-basic mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden ng-star-inserted']")
     public WebElement newSubmission;
 
-    //US_16_ Locaterlar
-    @FindBy(xpath = "//ms-layout-menu-button[@caption='NAV.GRADING.TITLE']//button")
-    public WebElement gradingMenu;
-
-    @FindBy(xpath = "//div[@role='tab' and contains(., 'Student Transcript')]")
-    public WebElement studentTranscript;
-
-    @FindBy(xpath = "//div[@role='tab' and contains(., 'Transcript By Subject')]")
-    public WebElement transcriptBySubject;
-
-    @FindBy(xpath = "//div[@role='tab' and contains(., 'Course Grade')]")
-    public WebElement courseGrade;
 
     //US_12 locators
     @FindBy(xpath = "(//button[@aria-haspopup='menu'])[7]")
@@ -276,6 +264,42 @@ public class DialogContent extends ParentPage{
 
     @FindBy(xpath = "//button[.//span[contains(text(), 'Pdf Export')] and contains(@class, 'mat-mdc-menu-item')]")
     public WebElement pdfButton;
+
+
+    @FindBy(xpath = "//span[text()='Messaging']")
+    public WebElement messagingButton;
+
+    @FindBy(xpath = "//span[text()='Trash']")
+    public WebElement trashButton;
+
+    @FindBy(xpath = "//ms-delete-button")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//button[normalize-space()='Delete']")
+    public WebElement confirmDeleteButton;
+
+    @FindBy(xpath = "//ms-standard-button[@icon='trash-restore']//button")
+    public WebElement restoreButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Students Fees')]")
+    public WebElement financePage;
+
+    //US_16
+
+    @FindBy(xpath = "//span[contains(@class, 'mat-badge') and text()='Grading']")
+    public WebElement gradingButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Course Grade')]")
+    public WebElement courseGradingButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Student Transcript')]")
+    public WebElement studentTransButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Transcript By Subject')]")
+    public WebElement transBySubjectButton;
+
+    @FindBy(css = "div[aria-selected='true']")
+    public WebElement verifyClick;
 
 
 
@@ -308,14 +332,18 @@ public class DialogContent extends ParentPage{
             case "paymentSuccessMessage":return this.paymentSuccessMessage;
             case "homeMLogo":return this.homeMLogo;
             case "calendarHeader":return this.calendarHeader;
+            case "messagingButton":return this.messagingButton;
+            case "trashButton":return this.trashButton;
+            case "deleteButton":return this.deleteButton;
+            case "restoreButton":return this.restoreButton;
+            case "confirmDeleteButton":return this.confirmDeleteButton;
+            case "financePage":return this.financePage;
             //US_16_Case'ler
-            case "gradingMenu":return this.gradingMenu;
-            case "studentTranscript":return this.studentTranscript;
-            case "transcriptBySubject":return this.transcriptBySubject;
-            case "courseGrade":return this.courseGrade;
-            case "threeDotButton":return this.threeDotButton;
-            case "excelButton":return this.excelButton;
-            case "pdfButton":return this.pdfButton;
+            case "gradingButton":return this.gradingButton;
+            case "courseGradingButton":return this.courseGradingButton;
+            case "studentTransButton":return this.studentTransButton;
+            case "transBySubjectButton":return this.transBySubjectButton;
+            case "verifyClick":return this.verifyClick;
         }
         return null;
     }
