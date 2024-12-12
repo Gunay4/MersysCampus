@@ -83,7 +83,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//tr[contains(@class, 'mat-mdc-row')][1]")
     public WebElement studentRow;
 
-    @FindBy(xpath = "//*[@id='mat-radio-3-input']")
+    @FindBy(xpath = "//*[@id=\"mat-radio-3\"]/div/div")
     public WebElement stripeCircle;
 
     @FindBy(xpath = "(//span[@class='mdc-tab__content'])[2]")
@@ -92,7 +92,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//ms-currency-field[@formcontrolname='customAmountField']//input[@id='ms-currency-field-0']")
     public WebElement amountField;
 
-    @FindBy(xpath = "//button[.//span[text()='Pay']]")
+    @FindBy(xpath = "//button[contains(@class, 'mat-mdc-button') and .//span[text()='Pay']]")
     public WebElement payButton;
 
     @FindBy(xpath = "//*[@id='Field-numberInput']")
@@ -105,12 +105,12 @@ public class DialogContent extends ParentPage{
     public WebElement cvcInputField;
 
     @FindBy(xpath = "//*[@id='Field-countryInput']")
-    public WebElement countryInputField;
+    public WebElement countrySelect;
 
     @FindBy(css = "[value='STRIPE']")
     public WebElement stripe;
 
-    @FindBy(xpath = "//div[contains(text(), 'Payment successful')]")
+    @FindBy(xpath = "//div[contains(text(), 'Student Payment Successfully created')]")
     public WebElement paymentSuccessMessage;
 
     @FindBy(xpath = "//td[contains(., 'Balance')]")
@@ -349,6 +349,34 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()='Sent']")
     public WebElement attendanceVerifySent;
 
+    //US_11
+
+    @FindBy(xpath = "//mat-radio-button[@id='mat-radio-5']//span[contains(@class, 'discount-class') and contains(text(), 'Pay in full')]")
+    public WebElement payInFullIndicator;
+
+    @FindBy(xpath = "//mat-radio-button[@id='mat-radio-4']//span[text()='Pay']")
+    public WebElement payIndicator;
+
+    @FindBy(xpath = "//label[@for='Field-numberInput' and normalize-space()='Card number']")
+    public WebElement cardNumberLabel;
+
+    @FindBy(xpath = "//*[@id='payment-element']/div/iframe")
+    public WebElement paymentIframe;
+
+    @FindBy(xpath = "//select[@id='Field-countryInput']/option")
+    public List<WebElement> countryOptions;
+
+    @FindBy(xpath = "//button[contains(@class, 'stripe-pay-button') and @mat-raised-button='']")
+    public WebElement stripePaymentsButton;
+
+    @FindBy(xpath = "(//td[contains(text(), '235')])[last()]")
+    public WebElement lastPayment235;
+
+    @FindBy(css = "svg[data-icon='chevron-left']")
+    public WebElement chevronLeftIcon;
+
+
+
 
 
 
@@ -374,7 +402,7 @@ public class DialogContent extends ParentPage{
             case "numberInputField":return this.numberInputField;
             case "expiryInputField":return this.expiryInputField;
             case "cvcInputField":return this.cvcInputField;
-            case "countryInputField":return this.countryInputField;
+            case "countrySelect":return this.countrySelect;
             case "stripe":return this.stripe;
             case "balanceCell":return this.balanceCell;
             case "paymentSuccessMessage":return this.paymentSuccessMessage;
@@ -410,8 +438,14 @@ public class DialogContent extends ParentPage{
             case "threeDotButton":return this.threeDotButton;
             case "excelButton":return this.excelButton;
             case "pdfButton":return this.pdfButton;
-
-
+            //US_11 caseler
+            case "payInFullIndicator":return this.payInFullIndicator;
+            case "payIndicator":return this.payIndicator;
+            case "cardNumberLabel":return this.cardNumberLabel;
+            case "paymentIframe":return this.paymentIframe;
+            case "stripePaymentsButton":return this.stripePaymentsButton;
+            case "lastPayment235":return this.lastPayment235;
+            case "chevronLeftIcon":return this.chevronLeftIcon;
         }
         return null;
     }
