@@ -374,6 +374,36 @@ public class DialogContent extends ParentPage{
 
     @FindBy(css = "svg[data-icon='chevron-left']")
     public WebElement chevronLeftIcon;
+///////////
+    @FindBy(xpath = "(//*[@data-icon='bars'])[1]")
+    public WebElement calendarDDMenu;
+
+    @FindBy(xpath = "//span[text()='Video Conference']")
+    public WebElement calenderVC;
+
+    @FindBy(xpath = "//span[text()='Video Meetings']")
+    public WebElement calenderVM;
+
+    @FindBy(xpath = "//*[@icon='presentation']")
+    public WebElement calenderPresentation;
+
+    @FindBy(xpath = "//div[@aria-label='Progress Bar']")
+    public WebElement calenderProgressBar;
+
+    @FindBy(xpath = "//iframe[@frameborder='0']")
+    public WebElement calenderFrame;
+
+    @FindBy(xpath = "//video[@playsinline='playsinline']")
+    public WebElement calenderVideoTitle;
+
+    @FindBy(xpath = "//span[@class='icon-fullscreen']")
+    public WebElement calenderFullScreen;
+
+    @FindBy(xpath = "//span[@class='vjs-duration-display']")
+    public WebElement calenderTotalDuration;
+
+    @FindBy(xpath = "//span[@class='vjs-remaining-time-display']")
+    public WebElement calenderRemDuration;
 
 
 
@@ -419,6 +449,7 @@ public class DialogContent extends ParentPage{
             case "courseGradingButton":return this.courseGradingButton;
             case "studentTransButton":return this.studentTransButton;
             case "transBySubjectButton":return this.transBySubjectButton;
+            case "verifyClick":return this.verifyClick;
             case "attendanceBtn":return this.attendanceBtn;
             case "attendanceExcBtn":return this.attendanceExcBtn;
             case "attendanceExcAdd":return this.attendanceExcAdd;
@@ -446,6 +477,11 @@ public class DialogContent extends ParentPage{
             case "stripePaymentsButton":return this.stripePaymentsButton;
             case "lastPayment235":return this.lastPayment235;
             case "chevronLeftIcon":return this.chevronLeftIcon;
+            case "calendarDDMenu":return this.calendarDDMenu;
+            case "calenderVC":return this.calenderVC;
+            case "calenderVM":return this.calenderVM;
+            case "calenderPresentation":return this.calenderPresentation;
+            case "calenderProgressBar":return this.calenderProgressBar;
         }
         return null;
     }
