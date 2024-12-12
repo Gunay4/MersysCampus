@@ -1,4 +1,4 @@
-package StepDefination;
+package StepDefinitions;
 
 import Pages.DialogContent;
 import Utilities.GWD;
@@ -63,7 +63,7 @@ public class US_22_Assignments {
 
         dc.showbyDate.click();
         wait.until(ExpectedConditions.visibilityOf(dc.showbyChart));
-        dc.showbyChart.click();
+        js.executeScript("arguments[0].click();", dc.showbyChart);
 
     }
 }

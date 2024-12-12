@@ -1,4 +1,4 @@
-package StepDefination;
+package StepDefinitions;
 
 import Pages.DialogContent;
 import io.cucumber.java.en.When;

@@ -1,10 +1,9 @@
-package StepDefination;
+package StepDefinitions;
 
 
 import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
