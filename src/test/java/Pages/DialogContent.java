@@ -201,7 +201,13 @@ public class DialogContent extends ParentPage{
     public WebElement calendarHeader;
 
     @FindBy(css = "[class='mdc-tab mat-mdc-tab mat-focus-indicator ng-star-inserted']")
-    public WebElement calenderMenu;
+    public WebElement calendarMenu;
+
+    @FindBy(css = "[class='fc-icon fc-icon-chevron-left']")
+    public WebElement leftArrowCalendar;
+
+    @FindBy(css = "[class='fc-icon fc-icon-chevron-right']")
+    public WebElement rightArrowCalendar;
 
     @FindBy(css = "[title='Today']")
     public WebElement todayBtn;
@@ -405,11 +411,34 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[@class='vjs-remaining-time-display']")
     public WebElement calenderRemDuration;
 
+    /////
 
+    @FindBy(xpath = "(//span[text()='11A-MATHEMATICS '])[4]")
+    public WebElement mathLesson;
 
+    @FindBy(xpath = "//div[text()=' December 11, 2024 ']")
+    public WebElement dateCourseMath;
 
+    @FindBy(xpath = "//div[text()=' 12:00 ']")
+    public WebElement startTime;
 
+    @FindBy(xpath = "//div[text()=' 12:50 ']")
+    public WebElement endTime;
 
+    @FindBy(xpath = "//div[text()=' Online ']")
+    public WebElement type;
+
+    @FindBy(xpath = "//div[text()='Course Meeting has not been started yet']")
+    public WebElement courseNotStartedMessage;
+
+    @FindBy(xpath = "//span[text()='Topic']")
+    public WebElement topicButton;
+
+    @FindBy(xpath = "//span[text()='Attachments']")
+    public WebElement atttachmensBtn;
+
+    @FindBy(xpath = "//span[text()='Recent Events']")
+    public WebElement recentEvents;
 
 
     public WebElement getWebElement(String strElementName){

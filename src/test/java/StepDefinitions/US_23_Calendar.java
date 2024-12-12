@@ -1,4 +1,4 @@
-package StepDefination;
+package StepDefinitions;
 
 import Pages.DialogContent;
 import Utilities.GWD;
@@ -30,15 +30,20 @@ public class US_23_Calendar {
     @Then("The student must be able to see and click on the weekly lesson plan link and the link to access the calendar pages.")
     public void theStudentMustBeAbleToSeeAndClickOnTheWeeklyLessonPlanLinkAndTheLinkToAccessTheCalendarPages() {
 
-        wait.until(ExpectedConditions.visibilityOf(dc.calenderMenu));
-        dc.myClick(dc.calenderMenu);
+        wait.until(ExpectedConditions.visibilityOf(dc.calendarMenu));
+        dc.myClick(dc.calendarMenu);
 
         wait.until(ExpectedConditions.visibilityOf(dc.todayBtn));
-        dc.weeklyCoursePlan.click();
+        dc.leftArrowCalendar.click();
+        dc.leftArrowCalendar.click();
+        dc.rightArrowCalendar.click();
+        dc.todayBtn.click();
     }
 
     @Then("The student should be able to see what the symbols P, S, E, C mean on the page.")
     public void theStudentShouldBeAbleToSeeWhatTheSymbolsPSECMeanOnThePage() {
+        wait.until(ExpectedConditions.elementToBeClickable(dc.weeklyCoursePlan));
+        dc.weeklyCoursePlan.click();
         wait.until(ExpectedConditions.visibilityOf(dc.published));
 
         Assert.assertTrue(dc.letterP.isDisplayed());

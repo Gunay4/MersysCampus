@@ -1,4 +1,4 @@
-package StepDefination;
+package StepDefinitions;
 
 import Pages.DialogContent;
 import Utilities.GWD;
@@ -6,7 +6,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +14,6 @@ import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.security.Key;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;

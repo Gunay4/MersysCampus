@@ -1,4 +1,4 @@
-package StepDefination;
+package StepDefinitions;
 
 import io.cucumber.datatable.DataTable;
 import java.util.List;
