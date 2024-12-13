@@ -447,6 +447,70 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.PRINT']")
     public WebElement secondPrintButton;
 
+    @FindBy(xpath = "//span[text()='Finance']")
+    public WebElement hMFinance;
+
+    @FindBy(xpath = "//span[text()='My Finance']")
+    public WebElement hMMyFinance;
+
+    @FindBy(xpath = "(//*[@tooltip='GENERAL.BUTTON.VIEW']//button)[1]")
+    public WebElement hMStudentFinance;
+
+    @FindBy(xpath = "//input[@value='STRIPE']")
+    public WebElement hMStripeCheck;
+
+    @FindBy(xpath = "//input[@value='TOTAL_DEBT_AT_ONCE']")
+    public WebElement hMTotalDebtPayment;
+
+    @FindBy(xpath = "//input[@value='CUSTOM_AMOUNT']")
+    public WebElement hMCustomDebtPayment;
+
+    @FindBy(xpath = "//*[@formcontrolname='customAmountField']//input")
+    public WebElement hMCustomAmountField;
+
+    @FindBy(xpath = "//*[@caption='PAYMENT.FIELD.PAY']//button")
+    public WebElement hMPaymentButton;
+
+    @FindBy(xpath = "//iframe[@title='Secure payment input frame']")
+    public WebElement hMIframe;
+
+    @FindBy(xpath = "//input[@id='Field-numberInput']")
+    public WebElement hMCardNumber;
+
+    @FindBy(xpath = "//input[@id='Field-expiryInput']")
+    public WebElement hMCardExpiration;
+
+    @FindBy(xpath = "//input[@id='Field-cvcInput']")
+    public WebElement hMCVCInput;
+
+    @FindBy(xpath = "//select[@id='Field-countryInput']")
+    public WebElement hMSelectCountry;
+
+    @FindBy(xpath = "//input[@id='Field-postalCodeInput']")
+    public WebElement hMPostalCode;
+
+    @FindBy(xpath = "//form[@id='payment-form']//button")
+    public WebElement hMStripePayButton;
+
+    @FindBy(xpath = "//div[text()='Student Payment successfully created']")
+    public WebElement hMPayConfirmationMsg;
+
+    @FindBy(xpath = "//*[@data-icon='chevron-left']/../..")
+    public WebElement hMBack;
+
+    @FindBy(xpath = "(//tbody[@role='rowgroup']//td[contains(@class,'totalRevenue')])[1]")
+    public WebElement hMTotalRevenue;
+
+    @FindBy(xpath = "(//div[contains(@id,'mat-tab-group')])[1]")
+    public WebElement hMOnlinePayment;
+
+    @FindBy(xpath = "//user-message-bell//button")
+    public WebElement hMMessageBox;
+
+    @FindBy(xpath = "(((//table//tbody)[2]//tr)[2]//td)[3]")
+    public WebElement hMMessageTitle;
+
+
 
     public WebElement getWebElement(String strElementName){
 
@@ -521,6 +585,25 @@ public class DialogContent extends ParentPage{
             //US_17_ Case'ler
             case "firstPrintButton":return this.firstPrintButton;
             case "secondPrintButton":return this.secondPrintButton;
+            case "hMFinance":return this.hMFinance;
+            case "hMMyFinance":return this.hMMyFinance;
+            case "hMStudentFinance":return this.hMStudentFinance;
+            case "hMStripeCheck":return this.hMStripeCheck;
+            case "hMTotalDebtPayment":return this.hMTotalDebtPayment;
+            case "hMCustomDebtPayment":return this.hMCustomDebtPayment;
+            case "hMCustomAmountField":return this.hMCustomAmountField;
+            case "hMPaymentButton":return this.hMPaymentButton;
+            case "hMCardNumber":return this.hMCardNumber;
+            case "hMCardExpiration":return this.hMCardExpiration;
+            case "hMCVCInput":return this.hMCVCInput;
+            case "hMSelectCountry":return this.hMSelectCountry;
+            case "hMPostalCode":return this.hMPostalCode;
+            case "hMStripePayButton":return this.hMStripePayButton;
+            case "hMBack":return this.hMBack;
+            case "hMIframe":return this.hMIframe;
+            case "hMMessageBox":return this.hMMessageBox;
+
+
         }
         return null;
     }
