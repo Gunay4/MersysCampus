@@ -440,6 +440,13 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()='Recent Events']")
     public WebElement recentEvents;
 
+    //US_17_ Locaterlar
+    @FindBy(xpath = "//ms-standard-button[@id='course-grade-print-button']//button")
+    public WebElement firstPrintButton;
+
+    @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.PRINT']")
+    public WebElement secondPrintButton;
+
 
     public WebElement getWebElement(String strElementName){
 
@@ -511,6 +518,9 @@ public class DialogContent extends ParentPage{
             case "calenderVM":return this.calenderVM;
             case "calenderPresentation":return this.calenderPresentation;
             case "calenderProgressBar":return this.calenderProgressBar;
+            //US_17_ Case'ler
+            case "firstPrintButton":return this.firstPrintButton;
+            case "secondPrintButton":return this.secondPrintButton;
         }
         return null;
     }
