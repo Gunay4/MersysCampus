@@ -510,6 +510,14 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(((//table//tbody)[2]//tr)[2]//td)[3]")
     public WebElement hMMessageTitle;
 
+    @FindBy(xpath = "//div[text()='16']")
+    public WebElement assignmentsNumber;
+
+    @FindBy(xpath = "//*[contains(text(), 'Overdue')]")
+    public WebElement overdueText;
+
+
+
 
 
     public WebElement getWebElement(String strElementName){
@@ -602,6 +610,8 @@ public class DialogContent extends ParentPage{
             case "hMBack":return this.hMBack;
             case "hMIframe":return this.hMIframe;
             case "hMMessageBox":return this.hMMessageBox;
+            case "assignmentsNumber":return this.assignmentsNumber;
+            case "overdueText":return this.overdueText;
 
 
         }
