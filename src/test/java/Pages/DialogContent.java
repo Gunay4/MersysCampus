@@ -516,12 +516,29 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[contains(text(), 'Overdue')]")
     public WebElement overdueText;
 
+    @FindBy(xpath = "//span[contains(@class,'username')]")
+    public WebElement profileDDMenu;
 
+    @FindBy(xpath = "//span[text()='Settings']")
+    public WebElement profileSettings;
 
+    @FindBy(xpath = "//img[contains(@class,'profile-image')]")
+    public WebElement profileImage;
+
+    @FindBy(xpath = "//*[contains(@class,'upload')]")
+    public WebElement profileUpload;
+
+    @FindBy(xpath = "//span[text()=' Upload ']")
+    public WebElement profileUploadConfirm;
+
+    @FindBy(xpath = "//*[@data-icon='floppy-disk']")
+    public WebElement profileSave;
+
+    @FindBy(xpath = "//div[text()='Profile successfully updated']")
+    public WebElement profileSccssMsg;
 
 
     public WebElement getWebElement(String strElementName){
-
         switch (strElementName.trim()) {
             case "loginUsername":return this.loginUsername;
             case "loginPassword":return this.loginPassword;
@@ -612,6 +629,12 @@ public class DialogContent extends ParentPage{
             case "hMMessageBox":return this.hMMessageBox;
             case "assignmentsNumber":return this.assignmentsNumber;
             case "overdueText":return this.overdueText;
+            case "profileDDMenu":return this.profileDDMenu;
+            case "profileSettings":return this.profileSettings;
+            case "profileImage":return this.profileImage;
+            case "profileUpload":return this.profileUpload;
+            case "profileUploadConfirm":return this.profileUploadConfirm;
+            case "profileSave":return this.profileSave;
 
 
         }
