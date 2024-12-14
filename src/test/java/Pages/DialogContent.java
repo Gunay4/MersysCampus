@@ -440,6 +440,17 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()='Recent Events']")
     public WebElement recentEvents;
 
+    @FindBy(xpath = "//div[text()='16']")
+    public WebElement assignmentsNumber;
+
+    @FindBy(xpath = "//*[contains(text(), 'Overdue')]")
+    public WebElement overdueText;
+
+
+
+
+
+
 
     public WebElement getWebElement(String strElementName){
 
@@ -511,6 +522,10 @@ public class DialogContent extends ParentPage{
             case "calenderVM":return this.calenderVM;
             case "calenderPresentation":return this.calenderPresentation;
             case "calenderProgressBar":return this.calenderProgressBar;
+            case "assignmentsNumber":return this.assignmentsNumber;
+            case "overdueText":return this.overdueText;
+
+
         }
         return null;
     }
