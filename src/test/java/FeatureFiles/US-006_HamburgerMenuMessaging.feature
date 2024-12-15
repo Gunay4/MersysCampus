@@ -16,6 +16,6 @@ Feature: HamburgerMenuMessaging
       | outbox              |
     And Verify That the Trash Icon is Visible
     When Click on the Element in Dialog
-    | trashIcon        |
-    | confirmYesButton |
+      | trashIcon        |
+      | confirmYesButton |
     Then Verify that the Trash Success Message

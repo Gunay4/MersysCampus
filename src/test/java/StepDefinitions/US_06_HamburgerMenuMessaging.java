@@ -17,9 +17,9 @@ public class US_06_HamburgerMenuMessaging {
 
     @And("Verify That the Trash Icon is Visible")
     public void verifyThatTheTrashIconIsVisible() {
-            wait.until(ExpectedConditions.visibilityOf(dc.trashIcon));
-            Assert.assertTrue(dc.trashIcon.isDisplayed());
-        }
+        wait.until(ExpectedConditions.visibilityOf(dc.trashIcon));
+        Assert.assertTrue(dc.trashIcon.isDisplayed());
+    }
 
 
     @Then("Verify that the Trash Success Message")

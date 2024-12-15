@@ -334,7 +334,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//span[text()='Search'])[2]")
     public WebElement attendanceFileSearchSend;
 
-    @FindBy(xpath = "//(//input[@type='checkbox'])[2]")
+    @FindBy(xpath = "(//input[@type='checkbox'])[2]")
     public WebElement attendanceSelectFile;
 
     @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.SELECT']//button")
@@ -642,12 +642,15 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[@style='font-size: 16px; font-weight: 500; padding-left: 8px;' and normalize-space(text())='Trash']")
     public WebElement trashElement;
 
+    //US_06_Locaterlar
+    @FindBy(xpath = "(//ms-confirm-button[@icon='shopping-basket'])[1]")
+    public WebElement trashIcon;
 
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement confirmYesButton;
 
-
-
-
-
+    @FindBy(xpath = "//div[text()='Message successfully moved to trash!']")
+    public WebElement trashSuccessMessage;
 
     public WebElement getWebElement(String strElementName){
         switch (strElementName.trim()) {
@@ -777,6 +780,11 @@ public class DialogContent extends ParentPage{
             case "inboxElement":return this.inboxElement;
             case "outboxElement":return this.outboxElement;
             case "trashElement":return this.trashElement;
+            //US_06_ Caseler
+            case "trashIcon":return this.trashIcon;
+            case "confirmYesButton":return this.confirmYesButton;
+            case "trashSuccessMessage":return this.trashSuccessMessage;
+
 
         }
         return null;
