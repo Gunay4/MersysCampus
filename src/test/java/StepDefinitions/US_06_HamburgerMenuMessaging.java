@@ -1,5 +1,4 @@
 package StepDefinitions;
-
 import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
@@ -29,5 +28,3 @@ public class US_06_HamburgerMenuMessaging {
         Assert.assertTrue(dc.trashSuccessMessage.getText().toLowerCase().contains("success".toLowerCase()));
     }
 }
-
-

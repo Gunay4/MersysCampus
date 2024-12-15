@@ -652,6 +652,8 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[text()='Message successfully moved to trash!']")
     public WebElement trashSuccessMessage;
 
+
+
     public WebElement getWebElement(String strElementName){
         switch (strElementName.trim()) {
             case "loginUsername":return this.loginUsername;
@@ -780,6 +782,7 @@ public class DialogContent extends ParentPage{
             case "inboxElement":return this.inboxElement;
             case "outboxElement":return this.outboxElement;
             case "trashElement":return this.trashElement;
+
             //US_06_ Caseler
             case "trashIcon":return this.trashIcon;
             case "confirmYesButton":return this.confirmYesButton;
