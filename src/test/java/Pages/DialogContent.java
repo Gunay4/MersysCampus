@@ -569,6 +569,61 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//link[@id='pfThemeLoader']")
     public WebElement profileSelectedTheme;
 
+    //US05 Locaterlar
+    @FindBy(xpath = "//span[text()='Send Message']")
+    public WebElement sendMessage;
+
+    @FindBy(xpath = "//ms-button[@tooltip='USER_MESSAGES.BUTTONS.RECEIVER']")
+    public WebElement addReceivers;
+
+    @FindBy(xpath = "//input[@placeholder='Name, Username or E-mail']")
+    public WebElement username;
+
+    @FindBy(xpath = "//td[text()='Student_1 11A']")
+    public WebElement checkBox1;
+
+    @FindBy(xpath = "//div[text()='Users (Fullname, Username or E-mail) was successfully added']")
+    public WebElement userSccssMsg;
+
+    @FindBy(xpath = "//td[text()='Student_3 11A']")
+    public WebElement checkBox2;
+
+    @FindBy(xpath = "//button[.//span[text()='Add']]")
+    public WebElement addButton;
+
+    @FindBy(xpath = "//td[text()='Teacher_1 T1']")
+    public WebElement checkBox3;
+
+    @FindBy(xpath = "//span[text()='Add & Close']")
+    public WebElement addAndCloseButton;
+
+    @FindBy(xpath = "//input[@placeholder='Subject']")
+    public WebElement subject;
+
+    @FindBy(xpath = "//iframe[@title='Rich Text Area']")
+    public WebElement iFrame;
+
+    @FindBy(xpath = "//body[@id='tinymce']")
+    public WebElement richTextArea;
+
+    @FindBy(xpath = "//span[text()='Attach Files...']")
+    public WebElement attachFiles;
+
+    @FindBy(xpath = "//span[text()='From Local']")
+    public WebElement fromLocal1;
+
+    @FindBy(xpath = "//ms-button[@caption='USER_MESSAGES.BUTTONS.SEND']//button")
+    public WebElement sendButton;
+
+    @FindBy(xpath = "//div[text()='Message Successfully sent']")
+    public WebElement messageSuccessfully;
+
+    @FindBy(xpath = "(//tbody[@role='rowgroup']//td)[3]")
+    public WebElement subjectTitle;
+
+    @FindBy(xpath = "//span[text()='Outbox']")
+    public WebElement outbox;
+
 
 
     public WebElement getWebElement(String strElementName){
@@ -677,6 +732,22 @@ public class DialogContent extends ParentPage{
             case "profileIndigo":return this.profileIndigo;
             case "profilePurple":return this.profilePurple;
             case "profileDPurple":return this.profileDPurple;
+            //US05 Caseler
+            case "sendMessage":return this.sendMessage;
+            case "addReceivers":return this.addReceivers;
+            case "username":return this.username;
+            case "checkBox1":return this.checkBox1;
+            case "checkBox2":return this.checkBox2;
+            case "addButton":return this.addButton;
+            case "checkBox3":return this.checkBox3;
+            case "addAndCloseButton":return this.addAndCloseButton;
+            case "subject":return this.subject;
+            case "iFrame":return this.iFrame;
+            case "richTextArea":return this.richTextArea;
+            case "attachFiles":return this.attachFiles;
+            case "fromLocal1":return this.fromLocal1;
+            case "sendButton":return this.sendButton;
+            case "outbox":return this.outbox;
 
         }
         return null;
