@@ -652,6 +652,41 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[text()='Message successfully moved to trash!']")
     public WebElement trashSuccessMessage;
 
+    @FindBy(css = "[page='CALENDAR']")
+    public WebElement calendar;
+
+    @FindBy(css = "[page='ATTENDANCE']")
+    public WebElement attendance;
+
+    @FindBy(css = "[page='ASSIGNMENT']")
+    public WebElement assigments;
+
+    @FindBy(css = "[page='GRADING']")
+    public WebElement grading;
+
+    @FindBy(xpath = "(//*[@data-icon='bars'])[1]")
+    public WebElement burgerMenu;
+
+    @FindBy(xpath = "(//div[@matbadgecolor='accent'])[2]")
+    public WebElement messages;
+
+    @FindBy(xpath = "(//div[@fxlayoutalign='center center'])[1]")
+    public WebElement profile;
+
+    @FindBy(xpath = "(//*[@data-icon='chevron-left'])[1]/../../../span")
+    public WebElement VerifyLeftHeader;
+
+    @FindBy(xpath = "//span[@class='title dialog-title']")
+    public WebElement VerifyRightHeader;
+
+    @FindBy(xpath = "//*[@data-icon='arrow-right-from-bracket']/../..//span")
+    public WebElement verifySignOut;
+
+    @FindBy(xpath = "//ms-standard-button[@tooltip='GENERAL.BUTTON.DOWNLOAD']//button")
+    public WebElement waitForPrint;
+
+    @FindBy(xpath = "//div[contains(@id,'cdk-overlay')]")
+    public WebElement waitForWindow;
 
 
     public WebElement getWebElement(String strElementName){
@@ -786,6 +821,13 @@ public class DialogContent extends ParentPage{
             case "trashIcon":return this.trashIcon;
             case "confirmYesButton":return this.confirmYesButton;
             case "trashSuccessMessage":return this.trashSuccessMessage;
+            case "calendar": return this.calendar;
+            case "attendance": return this.attendance;
+            case "assigments": return this.assigments;
+            case "grading": return this.grading;
+            case "burgerMenu": return this.burgerMenu;
+            case "messages": return this.messages;
+            case "profile": return this.profile;
 
 
         }
