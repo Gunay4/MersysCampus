@@ -624,6 +624,29 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()='Outbox']")
     public WebElement outbox;
 
+    @FindBy(xpath = "//button[.//span[text()='Inbox']]")
+    public WebElement Inbox;
+
+    @FindBy(xpath = "//button[.//span[text()='Trash']]")
+    public WebElement Trash;
+
+    @FindBy(xpath = "//span[text()=' New Message ']")
+    public WebElement newMessage;
+
+    @FindBy(xpath = "//span[normalize-space(text())='Inbox']")
+    public WebElement inboxElement;
+
+    @FindBy(xpath = "//span[@style='font-size: 16px; font-weight: 500; padding-left: 8px;' and normalize-space(text())='Outbox']")
+    public WebElement outboxElement;
+
+    @FindBy(xpath = "//span[@style='font-size: 16px; font-weight: 500; padding-left: 8px;' and normalize-space(text())='Trash']")
+    public WebElement trashElement;
+
+
+
+
+
+
 
 
     public WebElement getWebElement(String strElementName){
@@ -748,6 +771,12 @@ public class DialogContent extends ParentPage{
             case "fromLocal1":return this.fromLocal1;
             case "sendButton":return this.sendButton;
             case "outbox":return this.outbox;
+            case "Inbox":return this.Inbox;
+            case "Trash":return this.Trash;
+            case "newMessage":return this.newMessage;
+            case "inboxElement":return this.inboxElement;
+            case "outboxElement":return this.outboxElement;
+            case "trashElement":return this.trashElement;
 
         }
         return null;
