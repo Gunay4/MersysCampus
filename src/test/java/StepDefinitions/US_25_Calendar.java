@@ -50,4 +50,9 @@ public class US_25_Calendar {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
+
+    @And("Wait for page to load")
+    public void waitForPageToLoad() {
+        wait.until(ExpectedConditions.elementToBeClickable(dc.calenderSearch));
+    }
 }

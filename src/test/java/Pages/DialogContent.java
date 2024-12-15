@@ -390,7 +390,13 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()='Video Meetings']")
     public WebElement calenderVM;
 
-    @FindBy(xpath = "//*[@icon='presentation']")
+    @FindBy(xpath = "//span[text()='Status']/../../..")
+    public WebElement calenderStatus;
+
+    @FindBy(xpath = "//span[text()=' Ended ']/..//mat-pseudo-checkbox")
+    public WebElement calenderStatusEnded;
+
+    @FindBy(xpath = "//*[@icon='presentation']//button")
     public WebElement calenderPresentation;
 
     @FindBy(xpath = "//div[@aria-label='Progress Bar']")
@@ -410,6 +416,17 @@ public class DialogContent extends ParentPage{
 
     @FindBy(xpath = "//span[@class='vjs-remaining-time-display']")
     public WebElement calenderRemDuration;
+
+    @FindBy(xpath = "//button[@aria-label='Open calendar']")
+    public WebElement calenderOpenCal;
+
+    @FindBy(xpath = "//span[text()=' This year ']/..")
+    public WebElement calenderThisYear;
+
+    @FindBy(xpath = "//span[text()='Search']")
+    public WebElement calenderSearch;
+
+
 
     /////
 
@@ -537,6 +554,22 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[text()='Profile successfully updated']")
     public WebElement profileSccssMsg;
 
+    @FindBy(xpath = "//mat-select[@formcontrolname='theme']")
+    public WebElement profileThemeSelection;
+
+    @FindBy(xpath = "//mat-option[@value='purple-theme']")
+    public WebElement profilePurple;
+
+    @FindBy(xpath = "//mat-option[@value='dark-purple-theme']")
+    public WebElement profileDPurple;
+
+    @FindBy(xpath = "//mat-option[@value='indigo-theme']")
+    public WebElement profileIndigo;
+
+    @FindBy(xpath = "//link[@id='pfThemeLoader']")
+    public WebElement profileSelectedTheme;
+
+
 
     public WebElement getWebElement(String strElementName){
         switch (strElementName.trim()) {
@@ -607,6 +640,11 @@ public class DialogContent extends ParentPage{
             case "calenderVM":return this.calenderVM;
             case "calenderPresentation":return this.calenderPresentation;
             case "calenderProgressBar":return this.calenderProgressBar;
+            case "calenderOpenCal":return this.calenderOpenCal;
+            case "calenderThisYear":return this.calenderThisYear;
+            case "calenderSearch":return this.calenderSearch;
+            case "calenderStatus":return this.calenderStatus;
+            case "calenderStatusEnded":return this.calenderStatusEnded;
             //US_17_ Case'ler
             case "firstPrintButton":return this.firstPrintButton;
             case "secondPrintButton":return this.secondPrintButton;
@@ -635,7 +673,10 @@ public class DialogContent extends ParentPage{
             case "profileUpload":return this.profileUpload;
             case "profileUploadConfirm":return this.profileUploadConfirm;
             case "profileSave":return this.profileSave;
-
+            case "profileThemeSelection":return this.profileThemeSelection;
+            case "profileIndigo":return this.profileIndigo;
+            case "profilePurple":return this.profilePurple;
+            case "profileDPurple":return this.profileDPurple;
 
         }
         return null;

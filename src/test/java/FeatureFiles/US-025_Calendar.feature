@@ -16,6 +16,14 @@ Feature:Calender
       | calenderVC |
       | calenderVM |
     And Click on the Element in Dialog
+      | calenderOpenCal |
+    And Click on the Element in Dialog via Java Script
+      | calenderThisYear    |
+      | calenderStatus      |
+      | calenderStatusEnded |
+      | calenderSearch      |
+    And Wait for page to load
+    And Click on the Element in Dialog via Java Script
       | calenderPresentation |
     And Play the video
     Then Verify that the video is playing
