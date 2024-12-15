@@ -334,7 +334,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//span[text()='Search'])[2]")
     public WebElement attendanceFileSearchSend;
 
-    @FindBy(xpath = "//(//input[@type='checkbox'])[2]")
+    @FindBy(xpath = "(//input[@type='checkbox'])[2]")
     public WebElement attendanceSelectFile;
 
     @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.SELECT']//button")
@@ -624,6 +624,16 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()='Outbox']")
     public WebElement outbox;
 
+    //US_06_Locaterlar
+    @FindBy(xpath = "(//ms-confirm-button[@icon='shopping-basket'])[1]")
+    public WebElement trashIcon;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement confirmYesButton;
+
+    @FindBy(xpath = "//div[text()='Message successfully moved to trash!']")
+    public WebElement trashSuccessMessage;
+
 
 
     public WebElement getWebElement(String strElementName){
@@ -748,6 +758,10 @@ public class DialogContent extends ParentPage{
             case "fromLocal1":return this.fromLocal1;
             case "sendButton":return this.sendButton;
             case "outbox":return this.outbox;
+            //US_06_ Caseler
+            case "trashIcon":return this.trashIcon;
+            case "confirmYesButton":return this.confirmYesButton;
+            case "trashSuccessMessage":return this.trashSuccessMessage;
 
         }
         return null;
