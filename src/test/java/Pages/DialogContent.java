@@ -334,7 +334,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//span[text()='Search'])[2]")
     public WebElement attendanceFileSearchSend;
 
-    @FindBy(xpath = "(//input[@type='checkbox'])[2]")
+    @FindBy(xpath = "//(//input[@type='checkbox'])[2]")
     public WebElement attendanceSelectFile;
 
     @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.SELECT']//button")
@@ -624,15 +624,28 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()='Outbox']")
     public WebElement outbox;
 
-    //US_06_Locaterlar
-    @FindBy(xpath = "(//ms-confirm-button[@icon='shopping-basket'])[1]")
-    public WebElement trashIcon;
+    @FindBy(xpath = "//button[.//span[text()='Inbox']]")
+    public WebElement Inbox;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement confirmYesButton;
+    @FindBy(xpath = "//button[.//span[text()='Trash']]")
+    public WebElement Trash;
 
-    @FindBy(xpath = "//div[text()='Message successfully moved to trash!']")
-    public WebElement trashSuccessMessage;
+    @FindBy(xpath = "//span[text()=' New Message ']")
+    public WebElement newMessage;
+
+    @FindBy(xpath = "//span[normalize-space(text())='Inbox']")
+    public WebElement inboxElement;
+
+    @FindBy(xpath = "//span[@style='font-size: 16px; font-weight: 500; padding-left: 8px;' and normalize-space(text())='Outbox']")
+    public WebElement outboxElement;
+
+    @FindBy(xpath = "//span[@style='font-size: 16px; font-weight: 500; padding-left: 8px;' and normalize-space(text())='Trash']")
+    public WebElement trashElement;
+
+
+
+
+
 
 
 
@@ -758,10 +771,12 @@ public class DialogContent extends ParentPage{
             case "fromLocal1":return this.fromLocal1;
             case "sendButton":return this.sendButton;
             case "outbox":return this.outbox;
-            //US_06_ Caseler
-            case "trashIcon":return this.trashIcon;
-            case "confirmYesButton":return this.confirmYesButton;
-            case "trashSuccessMessage":return this.trashSuccessMessage;
+            case "Inbox":return this.Inbox;
+            case "Trash":return this.Trash;
+            case "newMessage":return this.newMessage;
+            case "inboxElement":return this.inboxElement;
+            case "outboxElement":return this.outboxElement;
+            case "trashElement":return this.trashElement;
 
         }
         return null;
