@@ -1,6 +1,5 @@
 Feature: HamburgerMenuMessaging
 
-
   Background:
     Given Navigate to website
     When User send keys in Dialog

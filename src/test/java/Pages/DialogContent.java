@@ -782,8 +782,7 @@ public class DialogContent extends ParentPage{
             case "inboxElement":return this.inboxElement;
             case "outboxElement":return this.outboxElement;
             case "trashElement":return this.trashElement;
-
-            //US_06_ Caseler
+//US_06_ Caseler
             case "trashIcon":return this.trashIcon;
             case "confirmYesButton":return this.confirmYesButton;
             case "trashSuccessMessage":return this.trashSuccessMessage;
