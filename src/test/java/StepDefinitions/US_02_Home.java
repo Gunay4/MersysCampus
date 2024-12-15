@@ -19,7 +19,7 @@ public class US_02_Home {
     static String homeWindowID = "";
 
     @And("Click on the element in Dialog")
-    public void clickOnTheElementInDialog(io.cucumber.datatable.DataTable dtButtons) {
+    public void clickOnTheElementInDialogAnd(io.cucumber.datatable.DataTable dtButtons) {
         homeWindowID = GWD.getDriver().getWindowHandle();
         List<String> listButton = dtButtons.asList(String.class);
         for (int i = 0; i < listButton.size(); i++) {
