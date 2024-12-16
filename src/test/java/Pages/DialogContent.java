@@ -221,7 +221,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[text()=' S ']")
     public WebElement letterS;
 
-    @FindBy(xpath = "//span[text()='E']")
+    @FindBy(xpath = "//*[text()=' E ']")
     public WebElement letterE;
 
     @FindBy(xpath = "//*[text()=' C ']")
@@ -253,6 +253,12 @@ public class DialogContent extends ParentPage{
 
     @FindBy(xpath = "(//span[text()='11A- GEOMETRY '])[1]")
     public WebElement geoMetry;
+
+    @FindBy(xpath = "(//span[text()='11A-STATISTICS '])[2]")
+    public WebElement statistics;
+
+    @FindBy(xpath = "//h4[@class='ng-star-inserted']//strong")
+    public WebElement dateText;
 
     @FindBy(css = "[placeholder='Name']")
     public WebElement lessonNames;

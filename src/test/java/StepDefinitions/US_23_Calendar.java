@@ -68,10 +68,12 @@ public class US_23_Calendar {
 
     @And("The courses that the student is responsible for should be visible and clickable.")
     public void theCoursesThatTheStudentIsResponsibleForShouldBeVisibleAndClickable() {
-        wait.until(ExpectedConditions.visibilityOf(dc.iconE));
-        Assert.assertTrue(dc.geoMetry.isDisplayed());
-        dc.myClick(dc.geoMetry);
+        wait.until(ExpectedConditions.visibilityOf(dc.letterE));
+        Assert.assertTrue(dc.statistics.isDisplayed());
+        wait.until(ExpectedConditions.elementToBeClickable(dc.todayIcon));
+        wait.until(ExpectedConditions.attributeToBe(dc.dateText,"innerHTML","16 December : Monday - 20 December : Friday "));
+        dc.myClick(dc.statistics);
         wait.until(ExpectedConditions.visibilityOf(dc.lessonNames));
-        Assert.assertTrue(dc.lessonNames.getAttribute("value").contains("11A- Geometry"));
+        Assert.assertTrue(dc.lessonNames.getAttribute("value").contains("11A-Statistics"));
     }
 }
