@@ -21,7 +21,8 @@ public class US_24_Calendar {
     public void clickOnALessonOnTheWeeklyCoursePlanPageAndVerifyTheLessonName() {
         wait.until(ExpectedConditions.visibilityOf(dc.weeklyCoursePlan));
 
-        wait.until(ExpectedConditions.visibilityOf(dc.iconE));
+        wait.until(ExpectedConditions.visibilityOf(dc.letterE));
+        wait.until(ExpectedConditions.elementToBeClickable(dc.geoMetry));
         Assert.assertTrue(dc.geoMetry.isDisplayed());
         dc.myClick(dc.geoMetry);
         wait.until(ExpectedConditions.visibilityOf(dc.lessonNames));
