@@ -29,20 +29,20 @@ public class _00_DataTable {
     }
 
     @And("User send keys in Dialog")
-    public void userSendKeysInDialog(DataTable dtKutuVeYazilar) {
-        List<List<String>> listKutuVeYazilar = dtKutuVeYazilar.asLists(String.class);
-        for (int i = 0; i < listKutuVeYazilar.size(); i++) {
-            WebElement kutu = (dc.getWebElement(listKutuVeYazilar.get(i).get(0)));
-            dc.mySendKeys(kutu, listKutuVeYazilar.get(i).get(1));
+    public void userSendKeysInDialog(DataTable dtBoxAndTexts) {
+        List<List<String>> listBoxAndTexts = dtBoxAndTexts.asLists(String.class);
+        for (int i = 0; i < listBoxAndTexts.size(); i++) {
+            WebElement box = (dc.getWebElement(listBoxAndTexts.get(i).get(0)));
+            dc.mySendKeys(box, listBoxAndTexts.get(i).get(1));
         }
     }
 
     @And("User send keys in LeftNav")
-    public void userSendKeysInLeftNav(DataTable dtKutuVeYazilar) {
-        List<List<String>> listKutuVeYazilar = dtKutuVeYazilar.asLists(String.class);
-        for (int i = 0; i < listKutuVeYazilar.size(); i++) {
-            WebElement kutu = (ln.getWebElement(listKutuVeYazilar.get(i).get(0)));
-            ln.mySendKeys(kutu, listKutuVeYazilar.get(i).get(1));
+    public void userSendKeysInLeftNav(DataTable dtBoxAndTexts) {
+        List<List<String>> listBoxAndTexts = dtBoxAndTexts.asLists(String.class);
+        for (int i = 0; i < listBoxAndTexts.size(); i++) {
+            WebElement box = (ln.getWebElement(listBoxAndTexts.get(i).get(0)));
+            ln.mySendKeys(box, listBoxAndTexts.get(i).get(1));
         }
     }
 

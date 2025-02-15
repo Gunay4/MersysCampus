@@ -133,7 +133,7 @@ public class US_11_HamburgerMenuFinance {
     }
 
     @And("User send random cvc code in Dialog")
-    public void userSendRandomCvcCodeInDialog(io.cucumber.datatable.DataTable dataTable) {
+    public void userSendRandomCvcCodeInDialog(DataTable dataTable) {
         try {
 
             List<String> fields = dataTable.asList();
@@ -158,7 +158,7 @@ public class US_11_HamburgerMenuFinance {
     }
 
     @And("User enters country in Dialog")
-    public void userEntersCountryInDialog(io.cucumber.datatable.DataTable dataTable) {
+    public void userEntersCountryInDialog(DataTable dataTable) {
         WebDriver driver = null;
         try {
 

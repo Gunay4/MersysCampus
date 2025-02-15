@@ -30,7 +30,7 @@ public class ParentPage {
 
     public void scrolltoElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
-        js.executeScript("arguments[0].scrollIntoView();", element);
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }
 
     public void mySelectByIndex(WebElement element, int index) {

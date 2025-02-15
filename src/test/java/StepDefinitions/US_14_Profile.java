@@ -4,7 +4,6 @@ import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -17,7 +16,6 @@ import java.time.Duration;
 public class US_14_Profile {
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(100));
     DialogContent dc = new DialogContent();
-    Actions actions = new Actions(GWD.getDriver());
     Robot robot;
 
     {
@@ -35,8 +33,8 @@ public class US_14_Profile {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        StringSelection dosyaYolu= new StringSelection("C:\\Users\\aliki\\Desktop\\shrek.jpg");
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(dosyaYolu, null);
+        StringSelection filePath= new StringSelection("\"C:\\shrek.jpg\"");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath, null);
 
        robot.keyPress(KeyEvent.VK_CONTROL);
        robot.keyPress(KeyEvent.VK_V);

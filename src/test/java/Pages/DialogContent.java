@@ -304,12 +304,6 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[contains(text(),'Course Grade')]")
     public WebElement courseGradingButton;
 
-    @FindBy(xpath = "//span[contains(text(),'Student Transcript')]")
-    public WebElement studentTransButton;
-
-    @FindBy(xpath = "//span[contains(text(),'Transcript By Subject')]")
-    public WebElement transBySubjectButton;
-
     @FindBy(css = "div[aria-selected='true']")
     public WebElement verifyClick;
 
@@ -465,7 +459,10 @@ public class DialogContent extends ParentPage{
 
     //US_17_ Locaterlar
     @FindBy(xpath = "//ms-standard-button[@id='course-grade-print-button']//button")
-    public WebElement firstPrintButton;
+    public WebElement downloadButton;
+
+    @FindBy(xpath = "//svg[@id='baseSvg']")
+    public WebElement downloadIcon;
 
     @FindBy(xpath = "//ms-button[@caption='GENERAL.BUTTON.PRINT']")
     public WebElement secondPrintButton;
@@ -729,8 +726,6 @@ public class DialogContent extends ParentPage{
             //US_16_Case'ler
             case "gradingButton":return this.gradingButton;
             case "courseGradingButton":return this.courseGradingButton;
-            case "studentTransButton":return this.studentTransButton;
-            case "transBySubjectButton":return this.transBySubjectButton;
             case "verifyClick":return this.verifyClick;
             case "attendanceBtn":return this.attendanceBtn;
             case "attendanceExcBtn":return this.attendanceExcBtn;
@@ -770,7 +765,7 @@ public class DialogContent extends ParentPage{
             case "calenderStatus":return this.calenderStatus;
             case "calenderStatusEnded":return this.calenderStatusEnded;
             //US_17_ Case'ler
-            case "firstPrintButton":return this.firstPrintButton;
+            case "downloadButton":return this.downloadButton;
             case "secondPrintButton":return this.secondPrintButton;
             case "hMFinance":return this.hMFinance;
             case "hMMyFinance":return this.hMMyFinance;
