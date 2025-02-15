@@ -9,16 +9,9 @@ Feature: Grading Menu Functionality
       | loginButton |
     Then User should login successfully
 
-  Scenario: Grading Page and Save the Grades
+  Scenario: Print and download grades
     When Click on the Element in Dialog
-      | gradingButton    |
-      | firstPrintButton |
-    When Navigate and Click firstDownload button
-    Then Navigate and Click the Save Button
-    Then Close to screen to Switch Campus
-    When Click on the Element in Dialog
-      | studentTransButton |
-      | secondPrintButton  |
-    When Navigate and Click secondDownload button
-    And Navigate and Click the Save Button Again
-    Then Close to screen to Switch Campus
+      | gradingButton  |
+      | downloadButton |
+    When The user views a Download icon and clicks on it
+    Then The user views PDF Document page and clicks on the Save button

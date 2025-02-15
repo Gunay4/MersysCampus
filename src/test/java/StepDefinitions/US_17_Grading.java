@@ -1,12 +1,20 @@
 package StepDefinitions;
 
-import io.cucumber.java.en.And;
+import Pages.DialogContent;
+import Utilities.GWD;
+import Utilities.Tools;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.util.Set;
 
 public class US_17_Grading {
+    String downloads = System.getProperty("user.home") + "/Downloads";
+    Tools tools=new Tools();
     Robot robot;
 
     {
@@ -17,48 +25,33 @@ public class US_17_Grading {
         }
     }
 
-    @When("Navigate and Click firstDownload button")
-    public void navigateAndClickFirstDownloadButton()
-            throws InterruptedException {
-        for (int i = 0; i <= 14; i++) {
-            robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);
-            Thread.sleep(100);
-        }
+    @When("The user views a Download icon and clicks on it")
+    public void theUserViewsADownloadIconAndClicksOnIt() {
+
+        String mainHandle = GWD.getDriver().getWindowHandle();
+        Set<String> handles = GWD.getDriver().getWindowHandles();
+
+        for (String handle : handles)
+            if (!handle.equals(mainHandle))
+                GWD.getDriver().switchTo().window(handle);
+
+        tools.robotClick(15);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
-    }
+        tools.wait(3);
 
-    @And("Navigate and Click the Save Button")
-    public void navigateAndClickTheSaveButton() {
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-    }
-
-    @Then("Close to screen to Switch Campus")
-    public void closeToScreenToSwitchCampus() {
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_W);
-        robot.keyRelease(KeyEvent.VK_W);
-        robot.keyRelease(KeyEvent.VK_CONTROL);
 
     }
 
-    @When("Navigate and Click secondDownload button")
-    public void navigateAndClickSecondDownloadButton()
-            throws InterruptedException {
-            for (int i = 0; i <= 14; i++) {
-                robot.keyPress(KeyEvent.VK_TAB);
-                robot.keyRelease(KeyEvent.VK_TAB);
-                Thread.sleep(100);
-            }
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-        }
-
-    @And("Navigate and Click the Save Button Again")
-    public void navigateAndClickTheSaveButtonAgain() {
+    @Then("The user views PDF Document page and clicks on the Save button")
+    public void theUserViewsPDFDocumentPageAndClicksOnTheSaveButton() {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+
+        File downloadFolder = new File(downloads);
+        File[] files = downloadFolder.listFiles((downloads, name) -> name.contains(".pdf"));
+        Assert.assertNotNull(files);
+        Assert.assertTrue(files.length > 0);
+
     }
 }

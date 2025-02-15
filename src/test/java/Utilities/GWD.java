@@ -47,9 +47,9 @@ public class GWD {
         if (threadDriver.get() != null) {
             threadDriver.get().quit();
 
-            WebDriver hattaki = threadDriver.get();
-            hattaki = null;
-            threadDriver.set(hattaki);
+            WebDriver onTheLine = threadDriver.get();
+            onTheLine = null;
+            threadDriver.set(onTheLine);
         }
     }
 }
