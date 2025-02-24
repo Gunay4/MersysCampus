@@ -9,14 +9,13 @@ import java.util.List;
 
 public class _00_DataTable {
 
-    Headers ln = new Headers();
     DialogContent dc = new DialogContent();
 
     @And("Click on the Element in LeftNav")
-    public void clickOnTheElementInLeftNav(DataTable dtLinkler) {
-        List<String> listLinkler = dtLinkler.asList(String.class);
-        for (int i = 0; i < listLinkler.size(); i++) {
-            ln.myClick(ln.getWebElement(listLinkler.get(i)));
+    public void clickOnTheElementInLeftNav(DataTable dtLinks) {
+        List<String> listLinks = dtLinks.asList(String.class);
+        for (int i = 0; i < listLinks.size(); i++) {
+            dc.myClick(dc.getWebElement(listLinks.get(i)));
         }
     }
 
@@ -41,8 +40,8 @@ public class _00_DataTable {
     public void userSendKeysInLeftNav(DataTable dtBoxAndTexts) {
         List<List<String>> listBoxAndTexts = dtBoxAndTexts.asLists(String.class);
         for (int i = 0; i < listBoxAndTexts.size(); i++) {
-            WebElement box = (ln.getWebElement(listBoxAndTexts.get(i).get(0)));
-            ln.mySendKeys(box, listBoxAndTexts.get(i).get(1));
+            WebElement box = (dc.getWebElement(listBoxAndTexts.get(i).get(0)));
+            dc.mySendKeys(box, listBoxAndTexts.get(i).get(1));
         }
     }
 

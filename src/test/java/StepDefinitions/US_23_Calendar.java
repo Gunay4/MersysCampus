@@ -9,17 +9,20 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.List;
 
 public class US_23_Calendar {
 
     DialogContent dc = new DialogContent();
+    LocalDate date = LocalDate.now();
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(8));
 
     @Given("Navigate to Calendar")
     public void navigateToCalendar(DataTable dataTable) {
-        List<String> linkbutton=dataTable.asList(String.class);
+        List<String> linkbutton = dataTable.asList(String.class);
         for (int i = 0; i < linkbutton.size(); i++) {
             dc.myClick(dc.getWebElement(linkbutton.get(i)));
         }
@@ -51,10 +54,10 @@ public class US_23_Calendar {
         Assert.assertTrue(dc.letterE.isDisplayed());
         Assert.assertTrue(dc.letterC.isDisplayed());
 
-        Assert.assertEquals(dc.published.getText().toLowerCase(),"published");
-        Assert.assertEquals(dc.started.getText().toLowerCase(),"started");
-        Assert.assertEquals(dc.ended.getText().toLowerCase(),"ended");
-        Assert.assertEquals(dc.cancelled.getText().toLowerCase(),"cancelled");
+        Assert.assertEquals(dc.published.getText().toLowerCase(), "published");
+        Assert.assertEquals(dc.started.getText().toLowerCase(), "started");
+        Assert.assertEquals(dc.ended.getText().toLowerCase(), "ended");
+        Assert.assertEquals(dc.cancelled.getText().toLowerCase(), "cancelled");
     }
 
     @Then("On the weekly course plan page, the student should be able to click on the icons to go back and forth in the calendar and directly to today.")
@@ -69,11 +72,18 @@ public class US_23_Calendar {
     @And("The courses that the student is responsible for should be visible and clickable.")
     public void theCoursesThatTheStudentIsResponsibleForShouldBeVisibleAndClickable() {
         wait.until(ExpectedConditions.visibilityOf(dc.letterE));
-        Assert.assertTrue(dc.statistics.isDisplayed());
+
+        dc.todayIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(dc.dateText));
+        int dateDayOfMonth = date.getDayOfMonth();
+        String dayOfMonth = String.valueOf(dateDayOfMonth);
+        Assert.assertTrue(dc.dateText.getText().contains(dayOfMonth));
+
         wait.until(ExpectedConditions.elementToBeClickable(dc.todayIcon));
-        wait.until(ExpectedConditions.attributeToBe(dc.dateText,"innerHTML","16 December : Monday - 20 December : Friday "));
         dc.myClick(dc.statistics);
-        wait.until(ExpectedConditions.visibilityOf(dc.lessonNames));
-        Assert.assertTrue(dc.lessonNames.getAttribute("value").contains("11A-Statistics"));
+        wait.until(ExpectedConditions.visibilityOf(dc.courseNotStartedMessage));
+        Assert.assertTrue(dc.courseNotStartedMessage.getText().contains("Course Meeting has not been started yet"));
+
+
     }
 }

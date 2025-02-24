@@ -9,8 +9,6 @@ Feature: All Assignments Functionality
       | loginButton |
     Then User should login successfully
 
-    Given Navigate to the assignment select filter and search
-
   Scenario: Student assignment submission process control
-
-    Given Checking the transactions on the homework page
+    Given Navigate to the assignment select filter and search
+    Then Checking the transactions on the homework page

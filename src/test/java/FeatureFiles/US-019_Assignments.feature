@@ -10,8 +10,7 @@ Feature: Discussion Functionality
     Then User should login successfully
 
 
-  Scenario:Send Discuss Message
+  Scenario: Send Discuss Message
 
     Given Navigate to the assignment select filter and search
-
-    When Navigate to Discussion
+    And The user send discussion and verify all necessary steps

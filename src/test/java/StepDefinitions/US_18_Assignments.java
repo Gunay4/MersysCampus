@@ -26,30 +26,43 @@ public class US_18_Assignments {
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(15));
     JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
     Actions actions = new Actions(GWD.getDriver());
+    String assignmentsText;
 
-    @When("Hover over the Element in Assignment")
-    public void hoverOverTheElementInAssignment() {
+    @When("The user hovers over the assignments item")
+    public void theUserHoversOverTheAssignmentsItem() {
         wait.until(ExpectedConditions.visibilityOf(dc.assignment));
-        actions.moveToElement(dc.assignment).perform();
+        actions.moveToElement(dc.assignment).build().perform();
         wait.until(ExpectedConditions.visibilityOf(dc.assignmentsNumber));
 
     }
 
-
-    @Then("The assignmentsNumber should display the total number and click Assignments")
-    public void theAssignmentsNumberShouldDisplayTheTotalNumberAndClickAssignments() {
-        wait.until(ExpectedConditions.visibilityOf(dc.assignmentsNumber));
-        String assignmentsText = dc.assignmentsNumber.getText();
+    @Then("Total number of assignments task should appear")
+    public void totalNumberOfAssignmentsTaskShouldAppear() {
+        assignmentsText = dc.assignmentsNumber.getText();
         System.out.println("Displayed Assignments Number: " + assignmentsText);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.assignment)).click();
+        Assert.assertTrue(assignmentsText.contains("16"));
 
     }
 
+    @And("The user should see the tasks when click on the assignments item")
+    public void theUserShouldSeeTheTasksWhenClickOnTheAssignmentsItem() {
+        wait.until(ExpectedConditions.elementToBeClickable(dc.assignment)).click();
+        dc.myClick(dc.assignment);
 
-    @Then("the number of assignments displayed should be verified")
-    public void theNumberOfAssignmentsDisplayedShouldBeVerified() {
-        wait.until(ExpectedConditions.visibilityOf(dc.assignment));
-        actions.moveToElement(dc.assignment).perform();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[text()='16']")));
+        wait.until(ExpectedConditions.visibilityOf(dc.course));
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", dc.course);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.course));
+        dc.course.click();
+
+        actions.moveToLocation(750,420).click().build().perform();
+        wait.until(ExpectedConditions.elementToBeClickable(dc.status));
+        dc.status.click();
+        wait.until(ExpectedConditions.visibilityOf(dc.checkBox));
+        dc.checkBox.click();
+
+        actions.moveToLocation(750,420).click().build().perform();
+        dc.semester.click();
+        wait.until(ExpectedConditions.visibilityOf(dc.all));
+        dc.all.click();
     }
 }

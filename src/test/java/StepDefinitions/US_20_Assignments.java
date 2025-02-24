@@ -22,7 +22,7 @@ public class US_20_Assignments {
     public void verifyIconsOnTheRightSideOfTheHomeworkList() {
 
         rndNumber = (int) (Math.random() * 13);
-        wait.until(ExpectedConditions.textToBePresentInElement(dc.Verifynumber, "16"));
+        wait.until(ExpectedConditions.textToBePresentInElement(dc.Verifynumber, "18"));
         wait.until(ExpectedConditions.elementToBeClickable(dc.infoIcon.get(rndNumber)));
         dc.infoIcon.get(rndNumber).click();
 
@@ -31,13 +31,13 @@ public class US_20_Assignments {
         dc.backButton.click();
 
         dc.myClick(dc.assignment);
-        wait.until(ExpectedConditions.textToBePresentInElement(dc.Verifynumber, "16"));
+        wait.until(ExpectedConditions.textToBePresentInElement(dc.Verifynumber, "18"));
 
         wait.until(ExpectedConditions.visibilityOf(dc.fileImportIcon.get(rndNumber)));
         dc.fileImportIcon.get(rndNumber).click();
         dc.myClick(dc.closeWindowBtn);
 
-        wait.until(ExpectedConditions.textToBePresentInElement(dc.Verifynumber, "16"));
+        wait.until(ExpectedConditions.textToBePresentInElement(dc.Verifynumber, "18"));
         js.executeScript("arguments[0].click();", dc.starIcon.get(rndNumber));
         Assert.assertTrue(dc.starIconMarked.getFirst().isDisplayed());
         Assert.assertTrue(dc.chatsIcon.isDisplayed());
