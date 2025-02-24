@@ -7,7 +7,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -22,7 +21,6 @@ import java.util.List;
 public class US_13_Attendance {
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
     DialogContent dc = new DialogContent();
-    Actions actions = new Actions(GWD.getDriver());
     Robot robot;
 
     {
@@ -43,15 +41,15 @@ public class US_13_Attendance {
     }
 
     @And("User send excuses in Dialog")
-    public void userSendKeysInDialog(DataTable dtKutuVeYazilar) {
-        List<String> listKutuVeYazilar = dtKutuVeYazilar.asList(String.class);
+    public void userSendKeysInDialog(DataTable dtBoxAndArticles) {
+        List<String> listBoxandTexts = dtBoxAndArticles.asList(String.class);
         List<String> excMsgs = new ArrayList<>();
         excMsgs.add("My automation script for waking up failed because my coffee machine threw a 'No Beans Found' exception.");
         excMsgs.add("My brain’s operating system needed an unexpected update this morning—still rebooting!");
         excMsgs.add("I hit a traffic jam on the way from my bed to my desk. Turns out, my blanket wouldn’t let go!");
-        for (int i = 0; i < listKutuVeYazilar.size(); i++) {
-            WebElement kutu = (dc.getWebElement(listKutuVeYazilar.get(0)));
-            dc.mySendKeys(kutu, excMsgs.get((int) (Math.random() * 3)));
+        for (int i = 0; i < listBoxandTexts.size(); i++) {
+            WebElement box = (dc.getWebElement(listBoxandTexts.get(0)));
+            dc.mySendKeys(box, excMsgs.get((int) (Math.random() * 3)));
         }
     }
 

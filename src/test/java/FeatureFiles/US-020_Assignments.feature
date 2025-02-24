@@ -1,4 +1,4 @@
-Feature: Assignments Functionality
+Feature: Icons Functionality
 
   Background:
     Given Navigate to website
@@ -9,9 +9,9 @@ Feature: Assignments Functionality
       | loginButton |
     Then User should login successfully
 
-    Given Navigate to the assignment select filter and search
+  Scenario: Assignments Icons Control
 
-    Scenario:Assignments Icons Control
+    Given Navigate to the assignment select filter and search
 
       Given Verify Icons on the right side of the homework list
 

@@ -17,16 +17,6 @@ Feature: Hamburger Menu / Finance
       | financeButton       |
       | myFinanceButton     |
     Then User should be redirected to the Finance page
-    And User clicks on the "threeDotButton" on the Finance page
-    And User selects the "excelButton" option from the dropdown
-    Then The "Excel" file should be downloaded successfully
-
-    When Click on the Element in Dialog
-      | hamburgerMenuButton |
-      | financeButton       |
-      | myFinanceButton     |
-    Then User should be redirected to the Finance page
-
-    And User clicks on the "threeDotButton" on the Finance page
-    And User selects the "pdfButton" option from the dropdown
-    Then The "PDF" file should be downloaded successfully
+    And User clicks on the threeDotButton on the Finance page
+    Then User selects the excelButton option from the dropdown
+    Then The Excel file should be downloaded successfully

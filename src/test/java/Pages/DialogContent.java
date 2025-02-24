@@ -161,15 +161,6 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "[class='tox-edit-area__iframe']")
     public WebElement notePad;
 
-    @FindBy(xpath = "(//button[@class='tox-mbtn tox-mbtn--select'])[4]")
-    public WebElement insertBtn;
-
-    @FindBy(xpath = "//div[text()='Table']")
-    public WebElement table;
-
-    @FindBy(css = "[data-mce-name='Save']")
-    public WebElement tableSave;
-
     @FindBy(css = "[icon='paperclip']")
     public WebElement attachButton;
 
@@ -263,12 +254,12 @@ public class DialogContent extends ParentPage{
     @FindBy(css = "[placeholder='Name']")
     public WebElement lessonNames;
 
-    @FindBy(css = "[class='mat-badge mdc-button mat-mdc-button mat-badge-accent mat-mdc-button-base mat-mdc-raised-button mdc-button--raised mat-basic mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden ng-star-inserted']")
+    @FindBy(xpath = "//span[text()='New Submission']")
     public WebElement newSubmission;
 
 
     //US_12 locators
-    @FindBy(xpath = "(//button[@aria-haspopup='menu'])[7]")
+    @FindBy(xpath = "(//button[@aria-haspopup='menu'])[6]")
     public WebElement threeDotButton;
 
     @FindBy(xpath = "//button[@mat-menu-item and contains(., 'Excel Export')]")

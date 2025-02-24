@@ -1,4 +1,4 @@
-Feature: Assignments US_18
+Feature: Assignments Functionality
 
   Background:
     Given Navigate to website
@@ -9,9 +9,10 @@ Feature: Assignments US_18
       | loginButton |
     Then User should login successfully
 
-  Scenario: Verify assignmentsNumber control
+  Scenario: Verify Assignments Number
 
-    When Hover over the Element in Assignment
-    Then The assignmentsNumber should display the total number and click Assignments
-    Then the number of assignments displayed should be verified
+    When The user hovers over the assignments item
+    Then Total number of assignments task should appear
+    And The user should see the tasks when click on the assignments item
+
 

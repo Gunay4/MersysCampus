@@ -32,6 +32,7 @@ public class US_21_Assignments {
     @Given("Checking the transactions on the homework page")
     public void checkingTheTransactionsOnTheHomeworkPage() throws InterruptedException {
 
+        wait.until(ExpectedConditions.visibilityOf(dc.fileImportIcon.getFirst()));
         for (int i = 0; i <dc.fileImportIcon.size() ; i++) {
             Assert.assertTrue(dc.fileImportIcon.get(i).isDisplayed());
         }
@@ -98,11 +99,12 @@ public class US_21_Assignments {
         wait.until(ExpectedConditions.visibilityOf(dc.successSendMessagge));
         Assert.assertTrue(dc.successSendMessagge.getText().toLowerCase().contains("successfully submitted"));
 
+        wait.until(ExpectedConditions.textToBePresentInElement(dc.Verifynumber, "18"));
         dc.rndmIconPlace.get((int) (Math.random()*dc.rndmIconPlace.size())).click();
         wait.until(ExpectedConditions.visibilityOf(dc.newSubmission));
-        Assert.assertTrue(dc.newSubmission.isDisplayed(),"New Submission butonu görünmüyor");
+        Assert.assertTrue(dc.newSubmission.isDisplayed(),"New Submission button does not appear");
         dc.newSubmission.click();
         wait.until(ExpectedConditions.visibilityOf(dc.notePad));
-        Assert.assertTrue(dc.notePad.isDisplayed(),"Metin editörü açılmadı");
+        Assert.assertTrue(dc.notePad.isDisplayed(),"Text Editor did not open");
     }
 }
