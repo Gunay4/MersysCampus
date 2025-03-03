@@ -1,46 +1,73 @@
-# Mersys Postman Project
+# Campus Mersys Testing Project
 
-## Project Description
-**MersysPostmanProject** is designed to test the functionality and reliability of the [Mersys](https://test.mersys.io/) website using manual API testing techniques. This repository serves as a centralized location for storing and sharing the JSON configurations and test cases executed on Postman during the testing process.
+**Two Week Sprint**
 
-## Technologies Used
-- **Postman**: For manual API testing and creating JSON collections of test cases.
-- **GitHub**: Serves as a repository for storing and version-controlling the JSON files.
-- **IntelliJ IDEA**: Used as a platform for managing the JSON files associated with the project.
+This repository contains the automated testing suite for the Campus Mersys project, a web-based platform designed for educational institutions. The tests cover various features available on the [Campus](https://test.mersys.io/) website.
 
-## Usage
-- Download the JSON file from this repository.
-- Open Postman and click the Import button in the toolbar.
-- In the Import window, drag and drop the downloaded JSON file into the designated area.
-- The collection will be imported and available for use in your Postman workspace.
+The Environment Used in the Project: [test.mersys.io](https://test.mersys.io/)
 
-## Postman Compatibility
-- This project was created using **Postman v11.23.3**. It is recommended to use the same version or a compatible version to ensure proper functionality.
+## Table of Contents
+- [Features Tested](#features-tested)
+- [Technologies and Tools Used](#technologies-and-tools-used)
+- [Prerequisites](#prerequisites)
+- [Contributors](#contributors)
+- [License](#license)
 
-## User Stories Summary
-- **US001**: Logging in to the admin role to safely perform administrative functions by obtaining an access token.
-- **US002**: Adding a country to the system with state validation through API.
-- **US101**: Performing CRUD operations for states (list, add, update, and delete).
-- **US102**: Managing CRUD operations for cities, ensuring efficiency and data integrity.
-- **US103**: Creating, listing, editing, and deleting exams via API.
-- **US104**: Customizing entrance exams by adding, editing, or deleting fields.
-- **US105**: Managing student groups through CRUD operations.
-- **US106**: Adding students to groups via API.
-- **US107**: Removing students from groups via API.
-- **US108**: Managing education standards with CRUD operations.
-- **US109**: Defining and editing grading schemes through API.
-- **US110**: Managing incidents such as accidents in schools via API.
+## Features Tested
+The following user stories are tested in this project:
 
-## User Stories Details
-For more information on user stories, refer to the detailed document:  [APITesting_UserStories_-_USER_STORIES.pdf](https://github.com/user-attachments/files/18221478/APITesting_UserStories_-_USER_STORIES.pdf)
+1. **Login Feature (US-001):** Ensures students can log into the system securely.
+2. **Homepage Navigation (US-002):** Clicking the logo redirects users to the homepage.
+3. **Top Navigation Menu (US-003):** Validates the functionality of main navigation buttons.
+4. **Messaging System (US-004 - US-007):** Covers message management, including sending, deleting, and recovering messages.
+5. **Finance Module (US-008 - US-011):** Enables students to view, pay, and track course fees.
+6. **Calendar & Attendance (US-012 - US-013):** Tracks events, class schedules, and attendance records.
+7. **Assignments & Grading (US-014 - US-017):** Allows students to submit assignments and view grades.
+8. **User Profile Management (US-018 - US-019):** Enables profile updates and customization.
+9. **Password Reset & Security (US-020):** Allows students to reset forgotten passwords securely.
+10. **Notifications & Chat (US-021 - US-022):** Provides real-time communication and updates.
+11. **Event Registration (US-023):** Enables students to sign up for campus events.
+12. **Resource Library (US-024):** Grants access to educational materials and documents.
+13. **Forum & Discussion (US-025):** Supports student participation in forums and discussions.
+14. **Course Material Access (US-026):** Ensures students can access and download course materials.
+15. **Survey Participation (US-027):** Allows students to complete surveys from the administration.
 
+## Technologies and Tools Used
+- **Java** - Programming language
+- **Selenium WebDriver** - Web browser automation
+- **TestNG** - Testing framework
+- **Cucumber** - Behavior-Driven Development (BDD)
+- **ExtentReports** - Test reporting
+- **Apache POI** - Excel file handling
+- **Java Faker** - Test data generation
+- **Maven** - Dependency management
+- **Git & GitHub** - Version control
+- **JIRA & Zephyr-Squad** - Test case management
+- **Page Object Model (POM)** - Test automation structure
+- **Logging with SLF4J** - Logging and debugging
 
-## Contributing
-- *alikilincwk*
-- *AlizaminMammadli*
-- *ariftemur*
-- *Gunay4*
-- *GWilsonpixie*
-- *kardelenssu*
-- *Sinem777*
-- *umit20222*
+## Prerequisites
+- **Java Development Kit (JDK)** installed and configured
+- **IDE (IntelliJ IDEA, Eclipse, or NetBeans)** for Java development
+- **Maven** installed for dependency management
+- **Git** for version control and collaboration
+- **Selenium WebDriver** setup and familiarity
+- **TestNG** framework knowledge
+- **Cucumber** basics for BDD testing
+- **ExtentReports** or similar reporting tools
+- **JIRA & Zephyr** for test case management
+- **Logging with SLF4J** setup
+
+## Contributors
+- **Team2 Members:**
+  - alikilincwk
+  - AlizaminMammadli
+  - ariftemur
+  - Gunay4
+  - GWilsonpixie
+  - kardelenssu
+  - Sinem777
+  - umit20222
+
+## License
+This project is created for educational and testing practice purposes, helping participants enhance their software testing skills.
